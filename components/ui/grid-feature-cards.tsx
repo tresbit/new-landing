@@ -22,7 +22,7 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
   }, [])
 
   return (
-    <div className={cn("relative overflow-hidden p-6", className)} {...props}>
+    <div className={cn("relative overflow-hidden p-6 bg-[#0b1120] opacity-95", className)} {...props}>
       {mounted && (
         <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full mask-[linear-gradient(white,transparent)]">
           <div className="from-foreground/5 to-foreground/1 absolute inset-0 bg-linear-to-r mask-[radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">

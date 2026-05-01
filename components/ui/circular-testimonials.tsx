@@ -22,6 +22,7 @@ interface Colors {
   arrowBackground?: string;
   arrowForeground?: string;
   arrowHoverBackground?: string;
+  activeBorderColor?: string;
 }
 interface FontSizes {
   name?: string;
@@ -58,6 +59,7 @@ export const CircularTestimonials = ({
   const colorArrowBg = colors.arrowBackground ?? "#141414";
   const colorArrowFg = colors.arrowForeground ?? "#f1f1f7";
   const colorArrowHoverBg = colors.arrowHoverBackground ?? "#00a6fb";
+  const colorActiveBorder = colors.activeBorderColor ?? "transparent";
   const fontSizeName = fontSizes.name ?? "1.5rem";
   const fontSizeDesignation = fontSizes.designation ?? "0.925rem";
   const fontSizeQuote = fontSizes.quote ?? "1.125rem";
@@ -131,6 +133,8 @@ export const CircularTestimonials = ({
         filter: "blur(0px)",
         transform: `translateX(0px) translateY(0px) scale(1) rotateY(0deg)`,
         transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
+        outline: `2px solid ${colorActiveBorder}`,
+        outlineOffset: "0px",
       };
     }
     if (isLeft) {

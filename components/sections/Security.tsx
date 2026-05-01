@@ -4,7 +4,7 @@ import { SECTION_IDS, ANIMATION_CONFIG } from "@/lib/config"
 import { FeatureCard } from "@/components/ui/grid-feature-cards"
 import { motion } from "framer-motion"
 import { Activity, Lock, ShieldCheck, TrendingUp, Wrench, Zap } from "lucide-react"
-import FlowFieldBackground from "@/components/ui/flow-field-background"
+import FloatingPathsBackground from "@/components/ui/floating-paths-background"
 
 const features = [
   {
@@ -48,13 +48,7 @@ const features = [
 export default function Security() {
   return (
     <section id={SECTION_IDS.SECURITY} className="dark relative bg-[#0b1120] py-20 overflow-hidden">
-      <FlowFieldBackground
-        color="#5ba8d8"
-        trailOpacity={0.12}
-        particleCount={500}
-        speed={0.7}
-        globalOpacity={ANIMATION_CONFIG.OPACITY}
-      />
+      <FloatingPathsBackground globalOpacity={ANIMATION_CONFIG.OPACITY} />
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, filter: "blur(8px)" }}

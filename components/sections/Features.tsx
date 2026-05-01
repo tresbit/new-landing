@@ -51,6 +51,7 @@ export default function Features() {
               arrowBackground: "#142033",
               arrowForeground: "#f1f5f9",
               arrowHoverBackground: "#286291",
+              activeBorderColor: "#0f1929",
             }}
             fontSizes={{
               name: "28px",
