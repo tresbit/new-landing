@@ -102,7 +102,7 @@ export default function IAPage() {
                   custom={i}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
+                  viewport={{ once: false, margin: "-60px" }}
                   variants={fadeUp}
                   className="relative bg-[#0b1120] p-8 md:p-10 group hover:bg-[#0d1728] transition-colors duration-200 overflow-hidden"
                 >
@@ -148,7 +148,7 @@ export default function IAPage() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
@@ -171,7 +171,7 @@ export default function IAPage() {
                   key={item.label}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.4, delay: i * 0.07 }}
                   className="flex items-start gap-3 p-4 rounded-xl border border-white/8 bg-white/3 hover:bg-white/6 transition-colors duration-200"
                 >
@@ -192,7 +192,7 @@ export default function IAPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent tracking-tight">

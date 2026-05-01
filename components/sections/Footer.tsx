@@ -9,21 +9,22 @@ const navSections = [
   {
     title: "Navega",
     links: [
-      { name: "Inicio", url: `#${SECTION_IDS.WELCOME}` },
-      { name: "Características", url: `#${SECTION_IDS.FEATURES}` },
-      { name: "Servicios", url: `#${SECTION_IDS.SECURITY}` },
-      { name: "Aliados", url: `#${SECTION_IDS.PARTNERS}` },
-      { name: "Contacto", url: `#${SECTION_IDS.CONTACT}` },
+      { name: "Inicio", url: "/" },
+      { name: "Características", url: `/#${SECTION_IDS.FEATURES}` },
+      { name: "Servicios", url: `/#${SECTION_IDS.SECURITY}` },
+      { name: "Aliados", url: `/#${SECTION_IDS.PARTNERS}` },
+      { name: "Contacto", url: `/#${SECTION_IDS.CONTACT}` },
     ],
   },
   {
-    title: "Servicios",
+    title: "¿Cómo lo hacemos?",
     links: [
-      { name: "Desarrollo a medida", url: `#${SECTION_IDS.FEATURES}` },
-      { name: "Consultoría tecnológica", url: `#${SECTION_IDS.CONTACT}` },
-      { name: "Soporte continuo", url: `#${SECTION_IDS.CONTACT}` },
-      { name: "Cyberseguridad", url: `#${SECTION_IDS.CONTACT}` },
-      { name: "Soluciones cloud", url: `#${SECTION_IDS.PARTNERS}` },
+      { name: "Seguridad", url: "/security" },
+      { name: "Inteligencia Artificial", url: "/ai" },
+      { name: "Time to Market", url: "/speed" },
+      { name: "Soporte y Continuidad", url: "/support" },
+      { name: "Integraciones", url: "/integrations" },
+      { name: "Arquitectura", url: "/architecture" },
     ],
   },
 ]
@@ -35,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href={`#${SECTION_IDS.WELCOME}`} aria-label="Tresbit - inicio" className="inline-block mb-4">
+            <a href="/" aria-label="Tresbit - inicio" className="inline-block mb-4">
               <Image src="/isotipo_white.svg" alt="Tresbit" width={40} height={40} style={{ width: 40, height: "auto" }} loading="lazy" />
             </a>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">

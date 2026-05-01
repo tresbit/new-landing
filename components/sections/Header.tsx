@@ -6,10 +6,10 @@ import { SECTION_IDS } from "@/lib/config"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { href: `#${SECTION_IDS.WELCOME}`, text: "Inicio" },
-  { href: `#${SECTION_IDS.FEATURES}`, text: "Características" },
-  { href: `#${SECTION_IDS.SECURITY}`, text: "Servicios" },
-  { href: `#${SECTION_IDS.CONTACT}`, text: "Contacto" },
+  { href: `/#${SECTION_IDS.WELCOME}`, text: "Inicio" },
+  { href: `/#${SECTION_IDS.FEATURES}`, text: "Características" },
+  { href: `/#${SECTION_IDS.SECURITY}`, text: "Servicios" },
+  { href: `/#${SECTION_IDS.CONTACT}`, text: "Contacto" },
 ]
 
 export default function Header() {
@@ -33,7 +33,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href={`#${SECTION_IDS.WELCOME}`} className="flex items-center" aria-label="Tresbit - inicio">
+        <a href="/" className="flex items-center" aria-label="Tresbit - inicio">
           <Image
             src="/isotipo_white.svg"
             alt="Tresbit"
@@ -56,7 +56,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={`#${SECTION_IDS.CONTACT}`}
+            href={`/#${SECTION_IDS.CONTACT}`}
             className="ml-2 px-4 py-2 rounded-lg border-2 border-white text-white text-sm font-semibold hover:bg-white hover:text-[#286291] transition-all duration-200"
           >
             Contacto

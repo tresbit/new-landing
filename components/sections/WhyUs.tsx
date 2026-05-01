@@ -59,7 +59,7 @@ export default function WhyUs() {
         <motion.div
           initial={{ opacity: 0, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14 max-w-2xl mx-auto"
         >
@@ -74,7 +74,7 @@ export default function WhyUs() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: false, margin: "-60px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 divide-y divide-x divide-dashed divide-white/35 border border-dashed border-white/35 mb-12"
         >

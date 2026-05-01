@@ -75,7 +75,7 @@ export default function Integrations() {
         <motion.div
           initial={{ opacity: 0, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14 max-w-2xl mx-auto"
         >
@@ -106,7 +106,7 @@ export default function Integrations() {
               custom={i}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: false, margin: "-60px" }}
               variants={cardVariants}
               className="group relative bg-[#0d1728] hover:bg-[#0f2035] p-8 transition-colors duration-200"
             >
@@ -143,7 +143,7 @@ export default function Integrations() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.4, delay: 0.35 }}
           className="mt-12 text-center"
         >
