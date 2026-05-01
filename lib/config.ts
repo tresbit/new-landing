@@ -7,7 +7,7 @@ export const COMPANY_INFO = {
     "Ceretti 244, Godoy Cruz, Mendoza 5501, AR",
   TAGLINE:
     process.env.NEXT_PUBLIC_COMPANY_TAGLINE ||
-    "Soluciones únicas, como tu empresa.",
+    "Tecnología que funciona. Negocios que avanzan.",
   WEBSITE: process.env.NEXT_PUBLIC_COMPANY_WEBSITE || "https://tresbit.com",
 };
 

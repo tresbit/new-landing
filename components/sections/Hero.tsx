@@ -24,7 +24,7 @@ function GeometricPaths() {
   }
 
   return (
-    <svg className="absolute inset-0 w-full h-full opacity-55" viewBox="0 0 800 480">
+    <svg className="absolute inset-0 w-full h-full opacity-55" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice">
       {paths.map((path) => (
         <motion.path
           key={path.id}
@@ -67,7 +67,7 @@ function FlowPaths() {
   })
 
   return (
-    <svg className="absolute inset-0 w-full h-full opacity-70" viewBox="0 0 800 800">
+    <svg className="absolute inset-0 w-full h-full opacity-70" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
       {flowPaths.map((path) => (
         <motion.path
           key={path.id}
@@ -122,7 +122,7 @@ function NeuralPaths() {
   })
 
   return (
-    <svg className="absolute inset-0 w-full h-full opacity-50" viewBox="0 0 800 600">
+    <svg className="absolute inset-0 w-full h-full opacity-50" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
       {connections.map((conn) => (
         <motion.path
           key={conn.id}
@@ -167,62 +167,12 @@ function NeuralPaths() {
   )
 }
 
-// Spiral Paths
-function SpiralPaths() {
-  const spirals = Array.from({ length: 8 }, (_, i) => {
-    const centerX = 400 + ((i % 4) - 1.5) * 200
-    const centerY = 300 + (Math.floor(i / 4) - 0.5) * 200
-    const radius = 80 + i * 15
-    const turns = 3 + i * 0.5
 
-    let path = `M${centerX + radius},${centerY}`
-    for (let angle = 0; angle <= turns * 360; angle += 5) {
-      const radian = (angle * Math.PI) / 180
-      const currentRadius = radius * (1 - angle / (turns * 360))
-      const x = centerX + currentRadius * Math.cos(radian)
-      const y = centerY + currentRadius * Math.sin(radian)
-      path += ` L${x},${y}`
-    }
-
-    return {
-      id: `spiral-${i}`,
-      d: path,
-      delay: i * 1.2,
-    }
-  })
-
-  return (
-    <svg className="absolute inset-0 w-full h-full opacity-60" viewBox="0 0 800 600">
-      {spirals.map((spiral) => (
-        <motion.path
-          key={spiral.id}
-          d={spiral.d}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{
-            pathLength: [0, 1, 1, 0],
-            opacity: [0, 0.95, 0.95, 0],
-            rotate: [0, 360],
-          }}
-          transition={{
-            pathLength: { duration: 18, times: [0, 0.12, 0.88, 1], repeat: Infinity, ease: "easeInOut" },
-            opacity: { duration: 18, times: [0, 0.12, 0.88, 1], repeat: Infinity, ease: "easeInOut" },
-            rotate: { duration: 28, repeat: Infinity, ease: "linear" },
-            delay: spiral.delay,
-          }}
-        />
-      ))}
-    </svg>
-  )
-}
 
 export default function HeroSection() {
   const [currentPattern, setCurrentPattern] = useState(0)
   const [mounted, setMounted] = useState(false)
-  const patterns = ["neural", "flow", "geometric", "spiral"]
+  const patterns = ["neural", "flow", "geometric"]
 
   useEffect(() => {
     setMounted(true)
@@ -238,7 +188,6 @@ export default function HeroSection() {
       case 0: return <NeuralPaths />
       case 1: return <FlowPaths />
       case 2: return <GeometricPaths />
-      case 3: return <SpiralPaths />
       default: return <NeuralPaths />
     }
   }
@@ -283,9 +232,8 @@ export default function HeroSection() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
-              Transformamos la{"-"}
-              <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>tecnología</span> en soluciones
-              para tu negocio
+              Transformamos la{" "}
+              <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>tecnología</span>{" "}en resultados concretos para tu negocio
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -293,8 +241,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5, duration: 1 }}
               className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-xl mb-10"
             >
-              Expertos en desarrollo de software, consultoría tecnológica y
-              soluciones empresariales
+              Diseñamos, desarrollamos y evolucionamos sistemas que resuelven problemas reales y acompañan el crecimiento de tu empresa.
             </motion.p>
 
             <motion.div
@@ -308,7 +255,7 @@ export default function HeroSection() {
                   size="lg"
                   className="px-8 py-6 text-base bg-[#286291] hover:bg-[#286291]/90 text-white rounded-xl shadow-[0_0_24px_rgba(40,98,145,0.45)] hover:shadow-[0_0_40px_rgba(91,168,216,0.55)] transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  Contáctanos
+                  Hablar con nosotros
                 </Button>
               </a>
               <a href={`#${SECTION_IDS.SECURITY}`} data-track="cta_servicios">
@@ -316,7 +263,7 @@ export default function HeroSection() {
                   size="lg"
                   className="px-8 py-6 text-base bg-white/10 border border-white/30 text-white hover:bg-white hover:text-[#0b1120] rounded-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  Nuestros servicios
+                  Ver cómo trabajamos
                 </Button>
               </a>
             </motion.div>

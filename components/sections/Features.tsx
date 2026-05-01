@@ -8,21 +8,21 @@ const SERVICES = [
     name: "Desarrollo a medida",
     designation: "Software · Full-Stack",
     quote:
-      "Creamos soluciones de software personalizadas que se adaptan perfectamente a los procesos y necesidades especificas de tu empresa, desde aplicaciones web hasta sistemas internos complejos.",
+      "Construimos sistemas adaptados a tu negocio, no al revés. Desde aplicaciones web hasta plataformas complejas, diseñadas para integrarse y escalar sin fricción.",
     src: "/customize-develop.png",
   },
   {
-    name: "Consultoria tecnologica",
-    designation: "Estrategia · Innovacion",
+    name: "Consultoría tecnológica",
+    designation: "Estrategia · Innovación",
     quote:
-      "Asesoramiento especializado para optimizar tus procesos digitales y aprovechar las ultimas tecnologias. Te ayudamos a tomar mejores decisiones con una hoja de ruta clara y ejecutable.",
+      "Te ayudamos a tomar decisiones tecnológicas con criterio. Evaluamos, priorizamos y definimos una hoja de ruta clara para avanzar sin improvisar.",
     src: "/consulting.png",
   },
   {
     name: "Soporte continuo",
     designation: "Mantenimiento · 24/7",
     quote:
-      "Acompanamiento permanente y mantenimiento proactivo de tus sistemas para garantizar su optimo funcionamiento. Respondemos rapido para que tu negocio nunca se detenga.",
+      "Acompañamos el sistema en producción para evitar caídas, resolver problemas rápido y mejorar de forma constante.",
     src: "/customer-support.png",
   },
 ]
@@ -33,10 +33,10 @@ export default function Features() {
       <div className="max-w-5xl mx-auto px-4 md:px-6">
         <div className="text-center mb-14">
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
-            Nuestras <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>soluciones</span>
+            Soluciones que resuelven, <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>no solo que funcionan</span>
           </h2>
           <p className="text-slate-300 text-xl leading-relaxed">
-            Todo lo que necesitas para hacer crecer tu negocio con tecnologia
+            Cada desarrollo está pensado para impactar en tu operación, no solo para cumplir un requerimiento.
           </p>
         </div>
 

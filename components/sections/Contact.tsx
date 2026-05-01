@@ -52,8 +52,8 @@ export default function Contact() {
       <DottedSurface className="absolute inset-0 opacity-60" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         <ContactCard
-          title="Ponte en contacto"
-          description="Estamos listos para ayudarte con tus necesidades tecnologicas. Completa el formulario y te respondemos a la brevedad."
+          title="Hablemos de tu próximo sistema"
+          description="Contanos qué estás buscando y evaluamos juntos la mejor forma de resolverlo. Sin vueltas, sin propuestas genéricas."
           contactInfo={[
             {
               icon: Phone,
@@ -139,7 +139,6 @@ export default function Contact() {
                   <option value="" disabled>Selecciona un asunto</option>
                   <option value="consulta">Consulta general</option>
                   <option value="presupuesto">Solicitud de presupuesto</option>
-                  <option value="soporte">Soporte tecnico</option>
                   <option value="otro">Otro</option>
                 </select>
               </div>
@@ -153,7 +152,7 @@ export default function Contact() {
                   name="message"
                   required
                   rows={4}
-                  placeholder="En que podemos ayudarte?"
+                  placeholder="Contanos qué necesitás resolver"
                   className="resize-none"
                 />
               </div>
@@ -161,12 +160,12 @@ export default function Contact() {
 
             {state === "error" && (
               <p role="alert" className="text-red-400 text-sm">
-                {errorMsg || "Ocurrio un error. Intenta de nuevo."}
+                {errorMsg || "Hubo un problema. Intentalo nuevamente."}
               </p>
             )}
             {state === "success" && (
               <p role="status" className="text-green-400 text-sm font-medium">
-                Mensaje enviado! Te responderemos a la brevedad.
+                Mensaje enviado. Te respondemos en breve.
               </p>
             )}
 
@@ -175,7 +174,7 @@ export default function Contact() {
               disabled={state === "sending"}
               className="w-full bg-[#286291] hover:bg-[#286291]/90 text-white font-semibold transition-all duration-200 disabled:opacity-60"
             >
-              {state === "sending" ? "Enviando..." : "Enviar mensaje"}
+              {state === "sending" ? "Enviando..." : "Enviar consulta"}
             </Button>
           </form>
         </ContactCard>

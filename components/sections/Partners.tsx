@@ -17,10 +17,10 @@ export default function Partners() {
     <section id={SECTION_IDS.PARTNERS} className="bg-[#0f1929] py-16 overflow-hidden border-t border-white/[0.07]">
       <div className="max-w-7xl mx-auto px-4 md:px-6 mb-10 text-center">
         <h2 className="font-heading text-4xl md:text-5xl font-bold mb-3 tracking-tight bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
-          Nuestros <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>aliados</span> tecnológicos
+          Tecnología sólida, <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>bien utilizada</span>
         </h2>
         <p className="text-slate-300 text-lg max-w-xl mx-auto">
-          Trabajamos con los mejores proveedores de tecnología para ofrecerte soluciones de alta calidad
+          Trabajamos con proveedores confiables, pero lo importante no es la herramienta: es cómo se implementa.
         </p>
       </div>
 

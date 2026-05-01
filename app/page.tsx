@@ -2,7 +2,7 @@
 import Header from "@/components/sections/Header"
 import Hero from "@/components/sections/Hero"
 import Features from "@/components/sections/Features"
-import Security from "@/components/sections/Security"
+import WhyUs from "@/components/sections/WhyUs"
 import Showcase from "@/components/sections/Showcase"
 import Partners from "@/components/sections/Partners"
 import Contact from "@/components/sections/Contact"
@@ -77,7 +77,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
-        <Security />
+        <WhyUs />
         <Showcase />
         <Partners />
         <Contact />

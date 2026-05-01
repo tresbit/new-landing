@@ -7,6 +7,7 @@ type FeatureType = {
   title: string
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   description: string
+  href?: string
 }
 
 type FeatureCardProps = React.ComponentProps<"div"> & {
@@ -21,8 +22,8 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
     setMounted(true)
   }, [])
 
-  return (
-    <div className={cn("relative overflow-hidden p-6 bg-[#0b1120] opacity-95 hover:bg-[#0d1728] transition-colors duration-200", className)} {...props}>
+  const inner = (
+    <div className={cn("relative overflow-hidden p-6 bg-[#0b1120] opacity-95 hover:bg-[#0d1728] transition-colors duration-200", feature.href && "cursor-pointer group", className)} {...props}>
       {mounted && (
         <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full mask-[linear-gradient(white,transparent)]">
           <div className="from-foreground/5 to-foreground/1 absolute inset-0 bg-linear-to-r mask-[radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
@@ -40,8 +41,23 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
       <feature.icon className="text-foreground/75 size-6" strokeWidth={1} aria-hidden />
       <h3 className="mt-10 text-base md:text-lg font-semibold text-foreground">{feature.title}</h3>
       <p className="text-muted-foreground relative z-20 mt-2 text-sm leading-relaxed">{feature.description}</p>
+      {feature.href && (
+        <span className="relative z-20 inline-flex items-center gap-1 mt-4 text-xs font-medium text-[#5ba8d8] opacity-70 group-hover:opacity-100 transition-opacity">
+          Ver más <span aria-hidden>→</span>
+        </span>
+      )}
     </div>
   )
+
+  if (feature.href) {
+    return (
+      <a href={feature.href} className="block">
+        {inner}
+      </a>
+    )
+  }
+
+  return inner
 }
 
 function GridPattern({

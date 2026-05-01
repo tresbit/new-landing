@@ -10,42 +10,48 @@ const features = [
   {
     title: "Seguridad sólida",
     icon: ShieldCheck,
+    href: "/security",
     description:
       "Protegemos accesos y datos críticos con autenticación robusta, cifrado y prácticas que reducen riesgos reales desde el diseño del sistema.",
   },
   {
     title: "Integración con IA",
-    icon: Brain, // o Sparkles si usas lucide
+    icon: Brain,
+    href: "/ai",
     description:
       "Incorporamos inteligencia artificial en procesos clave para automatizar tareas, mejorar decisiones y generar ventajas competitivas reales.",
   },
   {
     title: "Entrega rápida",
     icon: Rocket,
+    href: "/speed",
     description:
       "Llevamos ideas a producción en tiempos cortos mediante entregas iterativas, priorización por impacto y automatización del desarrollo.",
   },
   {
     title: "Continuidad operativa",
     icon: Activity,
+    href: "/support",
     description:
       "Monitoreamos, mantenemos y evolucionamos el sistema para asegurar estabilidad, respuesta rápida y funcionamiento constante.",
   },
   {
     title: "Integraciones sin fricción",
     icon: Link,
+    href: "/integrations",
     description:
       "Conectamos tu sistema con herramientas externas, APIs y plataformas existentes para evitar silos y optimizar procesos.",
   },
   {
     title: "Arquitectura preparada para crecer",
     icon: Layers,
+    href: "/architecture",
     description:
       "Diseñamos sistemas mantenibles y escalables que evolucionan sin generar deuda técnica ni bloqueos a futuro.",
   },
 ]
 
-export default function Security() {
+export default function WhyUs() {
   return (
     <section id={SECTION_IDS.SECURITY} className="dark relative bg-[#0b1120] py-20 overflow-hidden border-t border-white/[0.07]">
       <FloatingPathsBackground globalOpacity={ANIMATION_CONFIG.OPACITY} />
@@ -58,7 +64,7 @@ export default function Security() {
           className="text-center mb-14 max-w-2xl mx-auto"
         >
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
-            Preparado para crecer <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>sin fricciones</span>
+            ¿Por qué <span style={{ WebkitTextFillColor: "#5ba8d8", color: "#5ba8d8" }}>elegirnos</span>?
           </h2>
           <p className="text-slate-300 text-xl leading-relaxed">
             Diseñamos sistemas preparados para crecer, resistir y operar sin comprometer la información ni el rendimiento.

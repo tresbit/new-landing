@@ -131,3 +131,30 @@
     scroll-behavior: smooth;
   }
 }
+
+@keyframes btn-shine {
+  0%   { transform: translateX(-150%) skewX(-20deg); }
+  18%  { transform: translateX(250%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  animation: btn-shine 4s ease-in-out infinite;
+  animation-delay: 2s;
+  pointer-events: none;
+}
