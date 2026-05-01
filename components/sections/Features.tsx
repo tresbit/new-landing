@@ -29,11 +29,11 @@ const SERVICES = [
 
 export default function Features() {
   return (
-    <section id={SECTION_IDS.FEATURES} className="bg-[#0f1929] py-20">
+    <section id={SECTION_IDS.FEATURES} className="bg-[#0f1929] py-20 border-t border-white/[0.07]">
       <div className="max-w-5xl mx-auto px-4 md:px-6">
         <div className="text-center mb-14">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Nuestras <span className="text-[#5ba8d8]">soluciones</span>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
+            Nuestras <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>soluciones</span>
           </h2>
           <p className="text-slate-300 text-xl leading-relaxed">
             Todo lo que necesitas para hacer crecer tu negocio con tecnologia

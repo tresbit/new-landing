@@ -14,10 +14,10 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section id={SECTION_IDS.PARTNERS} className="bg-[#0f1929] py-16 overflow-hidden">
+    <section id={SECTION_IDS.PARTNERS} className="bg-[#0f1929] py-16 overflow-hidden border-t border-white/[0.07]">
       <div className="max-w-7xl mx-auto px-4 md:px-6 mb-10 text-center">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight">
-          Nuestros <span className="text-[#5ba8d8]">aliados</span> tecnológicos
+        <h2 className="font-heading text-4xl md:text-5xl font-bold mb-3 tracking-tight bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
+          Nuestros <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>aliados</span> tecnológicos
         </h2>
         <p className="text-slate-300 text-lg max-w-xl mx-auto">
           Trabajamos con los mejores proveedores de tecnología para ofrecerte soluciones de alta calidad

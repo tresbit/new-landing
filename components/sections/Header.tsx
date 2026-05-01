@@ -27,8 +27,8 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-[#286291] shadow-md"
-          : "bg-[#286291]",
+          ? "bg-[#07090f]/95 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/40"
+          : "bg-[#07090f]",
       )}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
@@ -94,7 +94,7 @@ export default function Header() {
       {/* Mobile nav */}
       <div
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 bg-[#286291]",
+          "md:hidden overflow-hidden transition-all duration-300 bg-[#07090f]",
           menuOpen ? "max-h-64 border-t border-white/20" : "max-h-0",
         )}
         aria-hidden={!menuOpen}

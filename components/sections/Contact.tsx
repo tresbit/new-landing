@@ -48,7 +48,7 @@ export default function Contact() {
   }
 
   return (
-    <section id={SECTION_IDS.CONTACT} className="dark relative bg-[#0b1120] text-white py-20 overflow-hidden">
+    <section id={SECTION_IDS.CONTACT} className="dark relative bg-[#0b1120] text-white py-20 overflow-hidden border-t border-white/[0.07]">
       <DottedSurface className="absolute inset-0 opacity-60" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         <ContactCard

@@ -47,7 +47,7 @@ const features = [
 
 export default function Security() {
   return (
-    <section id={SECTION_IDS.SECURITY} className="dark relative bg-[#0b1120] py-20 overflow-hidden">
+    <section id={SECTION_IDS.SECURITY} className="dark relative bg-[#0b1120] py-20 overflow-hidden border-t border-white/[0.07]">
       <FloatingPathsBackground globalOpacity={ANIMATION_CONFIG.OPACITY} />
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         <motion.div
@@ -57,8 +57,8 @@ export default function Security() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14 max-w-2xl mx-auto"
         >
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Soluciones <span className="text-[#5ba8d8]">seguras</span> y escalables
+          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-tight bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
+            Soluciones <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>seguras</span> y escalables
           </h2>
           <p className="text-slate-300 text-xl leading-relaxed">
             Desarrollamos sistemas robustos que crecen con tu negocio sin comprometer la seguridad
@@ -70,7 +70,7 @@ export default function Security() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 divide-y divide-x divide-dashed divide-white/20 border border-dashed border-white/20 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 divide-y divide-x divide-dashed divide-white/35 border border-dashed border-white/35 mb-12"
         >
           {features.map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
@@ -81,7 +81,7 @@ export default function Security() {
           <a
             href={`#${SECTION_IDS.CONTACT}`}
             data-track="cta_consulta"
-            className="inline-block px-8 py-4 bg-[#286291] text-white font-semibold rounded-xl shadow hover:bg-[#286291]/90 hover:-translate-y-0.5 transition-all duration-200"
+            className="inline-block px-8 py-4 bg-[#286291] text-white font-semibold rounded-xl shadow-[0_0_24px_rgba(40,98,145,0.45)] hover:shadow-[0_0_40px_rgba(91,168,216,0.55)] hover:bg-[#286291]/90 hover:-translate-y-0.5 transition-all duration-200"
           >
             Consulta por nuestras soluciones
           </a>

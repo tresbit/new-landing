@@ -282,9 +282,9 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 text-white">
-              Transformamos la{" "}
-              <span className="text-[#5ba8d8]">tecnología</span> en soluciones
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
+              Transformamos la{"-"}
+              <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>tecnología</span> en soluciones
               para tu negocio
             </h1>
             <motion.p
@@ -306,7 +306,7 @@ export default function HeroSection() {
               <a href={`#${SECTION_IDS.CONTACT}`} data-track="cta_contacto">
                 <Button
                   size="lg"
-                  className="px-8 py-6 text-base bg-[#286291] hover:bg-[#286291]/90 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+                  className="px-8 py-6 text-base bg-[#286291] hover:bg-[#286291]/90 text-white rounded-xl shadow-[0_0_24px_rgba(40,98,145,0.45)] hover:shadow-[0_0_40px_rgba(91,168,216,0.55)] transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Contáctanos
                 </Button>
