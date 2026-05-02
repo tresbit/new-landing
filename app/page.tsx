@@ -1,4 +1,5 @@
-﻿import { COMPANY_INFO, SOCIAL_LINKS } from "@/lib/config"
+﻿import type { Metadata } from "next"
+import { COMPANY_INFO, SOCIAL_LINKS } from "@/lib/config"
 import Header from "@/components/sections/Header"
 import Hero from "@/components/sections/Hero"
 import Features from "@/components/sections/Features"
@@ -7,6 +8,12 @@ import Showcase from "@/components/sections/Showcase"
 import Partners from "@/components/sections/Partners"
 import Contact from "@/components/sections/Contact"
 import Footer from "@/components/sections/Footer"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://tresbit.com",
+  },
+}
 
 const WEBSITE = COMPANY_INFO.WEBSITE
 

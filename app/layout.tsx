@@ -25,9 +25,6 @@ export const metadata: Metadata = {
   description:
     "Empresa de desarrollo de software a medida en Mendoza: aplicaciones web, mobile, automatización e integraciones. Hablemos de tu proyecto.",
   metadataBase: new URL("https://tresbit.com"),
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
