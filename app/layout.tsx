@@ -18,30 +18,41 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Tresbit | Software a medida en Mendoza",
+  title: {
+    default: "Tresbit | Software a medida en Mendoza",
+    template: "%s | Tresbit",
+  },
   description:
-    "Soluciones digitales a medida desde Mendoza: desarrollo web y mobile, automatización de procesos, backoffice y landings.",
+    "Empresa de desarrollo de software a medida en Mendoza: aplicaciones web, mobile, automatización e integraciones. Hablemos de tu proyecto.",
   metadataBase: new URL("https://tresbit.com"),
   alternates: {
     canonical: "/",
-    languages: { "es-AR": "/" },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
     title: "Tresbit | Software a medida en Mendoza",
     description:
-      "Soluciones digitales a medida desde Mendoza: desarrollo web y mobile, automatización de procesos, backoffice y landings.",
+      "Empresa de desarrollo de software a medida en Mendoza: aplicaciones web, mobile, automatización e integraciones. Hablemos de tu proyecto.",
     url: "https://tresbit.com",
     siteName: "Tresbit",
     locale: "es_AR",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Tresbit" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tresbit | Software a medida en Mendoza",
     description:
-      "Soluciones digitales a medida desde Mendoza: desarrollo web y mobile, automatización de procesos, backoffice y landings.",
-    images: ["/og-image.png"],
+      "Empresa de desarrollo de software a medida en Mendoza: aplicaciones web, mobile, automatización e integraciones. Hablemos de tu proyecto.",
   },
 };
 

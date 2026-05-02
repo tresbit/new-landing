@@ -2,8 +2,14 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Página no encontrada | Tresbit",
-  description: "La página que buscás no existe.",
+  // Use absolute to bypass the root layout's title template ("%s | Tresbit")
+  // and avoid producing "Página no encontrada | Tresbit | Tresbit".
+  title: { absolute: "Página no encontrada | Tresbit" },
+  description: "La página que buscás no existe o fue movida.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function NotFound() {
