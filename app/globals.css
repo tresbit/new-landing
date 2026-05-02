@@ -138,6 +138,27 @@
   100% { transform: translateX(250%) skewX(-20deg); }
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loader-spin {
+  0% { stroke-dashoffset: 56.55; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-fadeIn {
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+}
+
+.loader-circle {
+  animation: loader-spin 1s linear forwards;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
 .btn-shimmer {
   position: relative;
   overflow: hidden;

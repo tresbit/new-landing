@@ -1,7 +1,7 @@
 export const COMPANY_INFO = {
   NAME: "Tresbit",
   PHONE: process.env.NEXT_PUBLIC_COMPANY_PHONE || "+54 9 261 605 0326",
-  EMAIL: process.env.NEXT_PUBLIC_EMAIL_TO || "contacto@tresbit.com",
+  EMAIL: process.env.NEXT_PUBLIC_EMAIL_TO || "contact@tresbit.com",
   ADDRESS:
     process.env.NEXT_PUBLIC_COMPANY_ADDRESS ||
     "Ceretti 244, Godoy Cruz, Mendoza 5501, AR",
@@ -43,5 +43,5 @@ export const EMAIL_CONFIG = {
   PORT: Number(process.env.EMAIL_PORT) || 587,
   USER: process.env.EMAIL_USER || "",
   PASS: process.env.EMAIL_PASS || "",
-  TO: process.env.EMAIL_TO || "contacto@tresbit.com",
+  TO: process.env.EMAIL_TO || "contact@tresbit.com",
 };

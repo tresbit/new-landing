@@ -5,6 +5,7 @@ import { FeatureCard } from "@/components/ui/grid-feature-cards"
 import { motion } from "framer-motion"
 import { Activity, Brain, Layers, Link, Rocket, ShieldCheck } from "lucide-react"
 import FloatingPathsBackground from "@/components/ui/floating-paths-background"
+import Term from "@/components/ui/term-tooltip"
 
 const features = [
   {
@@ -34,8 +35,7 @@ const features = [
   {
     title: "Integraciones sin fricción",
     icon: Link,
-    description:
-      "Conectamos tu sistema con herramientas externas, APIs y plataformas existentes para evitar silos y optimizar procesos.",
+    description: <>Conectamos tu sistema con herramientas externas, <Term term="APIs" /> y plataformas existentes para evitar silos y optimizar procesos.</>,
   },
   {
     title: "Arquitectura preparada para crecer",

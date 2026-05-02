@@ -2,6 +2,7 @@
 
 import ComponentFileViewer, { type ApiComponent } from "@/components/ui/file-viewer";
 import { motion } from "framer-motion";
+import Term from "@/components/ui/term-tooltip";
 
 const TRESBIT_STACK: ApiComponent = {
   name: "Tresbit Dev Stack",
@@ -282,7 +283,7 @@ export default function Showcase() {
             <span className="text-[#5ba8d8]">tu aplicación</span>
           </h2>
           <p className="text-slate-300 max-w-xl mx-auto text-base leading-relaxed">
-            Código limpio, arquitectura escalable y SEO desde el primer commit. Explorá
+            Código limpio, arquitectura escalable y <Term term="SEO" /> desde el primer <Term term="Commit">commit</Term>. Explorá
             cómo estructuramos proyectos reales.
           </p>
         </motion.div>

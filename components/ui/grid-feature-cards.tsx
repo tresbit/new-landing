@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from "react"
 type FeatureType = {
   title: string
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  description: string
+  description: React.ReactNode
   href?: string
 }
 

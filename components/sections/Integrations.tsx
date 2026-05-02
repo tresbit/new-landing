@@ -1,17 +1,22 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
 import { Plug, Webhook, RefreshCw, Globe } from "lucide-react"
 import { SECTION_IDS } from "@/lib/config"
+import Term from "@/components/ui/term-tooltip"
 
-const blocks = [
-  {
-    icon: Plug,
-    tag: "Integraciones",
-    title: "Tu software, integrado a lo que ya usás",
-    description:
-      "Conectamos tu sistema con CRMs, ERPs, pasarelas de pago y herramientas internas. Sin carga manual de datos, sin duplicar procesos, sin errores de sincronización entre plataformas.",
-  },
+const blocks: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }>, tag: string, title: string, description: React.ReactNode }[] = [
+    {
+      icon: Plug,
+      tag: "Integraciones",
+      title: "Tu software, integrado a lo que ya usás",
+      description: (
+        <>
+          Conectamos tu sistema con <Term term="CRMs" />, <Term term="ERPs" />, pasarelas de pago y herramientas internas. Sin carga manual de datos, sin duplicar procesos, sin errores de sincronización entre plataformas.
+        </>
+      ),
+    },
   {
     icon: Webhook,
     tag: "Arquitectura API",
@@ -140,20 +145,25 @@ export default function Integrations() {
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.4, delay: 0.35 }}
-          className="mt-12 text-center"
-        >
-          <a
-            href={`#${SECTION_IDS.CONTACT}`}
-            className="inline-block px-8 py-4 bg-[#286291] text-white font-semibold rounded-xl shadow-[0_0_24px_rgba(40,98,145,0.45)] hover:shadow-[0_0_40px_rgba(91,168,216,0.55)] hover:bg-[#286291]/90 hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Hablemos de tu ecosistema
-          </a>
-        </motion.div>
+            <motion.div
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.5, delay: 0.1 }}
+               className="flex flex-wrap gap-3 justify-center"
+            >
+               {connectedItems.map((item) => (
+                 <span
+                   key={item}
+                   className="px-4 py-2 rounded-full text-sm font-medium border border-orange-500/20 text-orange-300/80 bg-orange-500/5"
+                 >
+                   {item}
+                 </span>
+               ))}
+               <span className="px-4 py-2 rounded-full text-sm font-medium border border-white/10 text-slate-400 bg-white/4">
+                 + <Term term="API" /> <Term term="REST" /> o <Term term="GraphQL" />
+               </span>
+            </motion.div>
       </div>
     </section>
   )

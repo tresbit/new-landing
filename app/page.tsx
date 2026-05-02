@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero"
 import Features from "@/components/sections/Features"
 import WhyUs from "@/components/sections/WhyUs"
 import Showcase from "@/components/sections/Showcase"
+import Description from "@/components/sections/Description"
 import Partners from "@/components/sections/Partners"
 import Contact from "@/components/sections/Contact"
 import Footer from "@/components/sections/Footer"
@@ -170,6 +171,7 @@ export default function Home() {
         <Features />
         <WhyUs />
         <Showcase />
+        <Description />
         <Partners />
         <Contact />
       </main>

@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Activity, Brain, Layers, Link as LinkIcon, Rocket, ShieldCheck } from "lucide-react"
 import FloatingPathsBackground from "@/components/ui/floating-paths-background"
 import Link from "next/link"
+import Term from "@/components/ui/term-tooltip"
 
 const features = [
   {
@@ -40,8 +41,7 @@ const features = [
     title: "Integraciones sin fricción",
     icon: LinkIcon,
     href: "/integrations",
-    description:
-      "Conectamos tu sistema con herramientas externas, APIs y plataformas existentes para evitar silos y optimizar procesos.",
+    description: <>Conectamos tu sistema con herramientas externas, <Term term="APIs" /> y plataformas existentes para evitar silos y optimizar procesos.</>,
   },
   {
     title: "Arquitectura preparada para crecer",

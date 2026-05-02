@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 interface Testimonial {
   quote: string;
   name: string;
-  designation: string;
+  designation: React.ReactNode;
   src: string;
 }
 interface Colors {

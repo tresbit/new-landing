@@ -2,11 +2,12 @@
 
 import { CircularTestimonials } from "@/components/ui/circular-testimonials"
 import { SECTION_IDS } from "@/lib/config"
+import Term from "@/components/ui/term-tooltip"
 
 const SERVICES = [
   {
     name: "Desarrollo a medida",
-    designation: "Software · Full-Stack",
+    designation: <>Software · <Term term="Full-Stack" /></>,
     quote:
       "Construimos sistemas adaptados a tu negocio, no al revés. Desde aplicaciones web hasta plataformas complejas, diseñadas para integrarse y escalar sin fricción.",
     src: "/customize-develop.webp",
