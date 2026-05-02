@@ -213,7 +213,7 @@ export default function IAPageContent() {
                   boxShadow: "0 0 24px rgba(124,58,237,0.4)",
                 }}
               >
-                Hablar con el equipo
+                Consultar sobre IA
               </Link>
             </motion.div>
           </div>

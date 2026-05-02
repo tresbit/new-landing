@@ -247,7 +247,7 @@ export default function SpeedPageContent() {
                 href={`/#${SECTION_IDS.CONTACT}`}
                 className="btn-shimmer inline-block px-8 py-4 bg-yellow-400 text-[#07090f] font-semibold rounded-xl shadow-[0_0_24px_rgba(251,191,36,0.4)] hover:shadow-[0_0_40px_rgba(251,191,36,0.6)] hover:bg-yellow-300 hover:-translate-y-0.5 transition-all duration-200"
               >
-                Hablar con el equipo
+                Hablar sobre tu MVP
               </Link>
             </motion.div>
           </div>

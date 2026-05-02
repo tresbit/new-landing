@@ -158,7 +158,7 @@ export default function SecurityPageContent() {
                 href={`/#${SECTION_IDS.CONTACT}`}
                 className="btn-shimmer inline-block px-8 py-4 bg-red-600 text-white font-semibold rounded-xl shadow-[0_0_24px_rgba(239,68,68,0.35)] hover:shadow-[0_0_40px_rgba(239,68,68,0.55)] hover:bg-red-500 hover:-translate-y-0.5 transition-all duration-200"
               >
-                Hablar con el equipo
+                Consultar sobre seguridad
               </Link>
             </motion.div>
           </div>

@@ -206,7 +206,7 @@ export default function ArchitecturePageContent() {
                 href={`/#${SECTION_IDS.CONTACT}`}
                 className="btn-shimmer inline-block px-8 py-4 bg-blue-500 text-white font-semibold rounded-xl shadow-[0_0_24px_rgba(96,165,250,0.35)] hover:shadow-[0_0_40px_rgba(96,165,250,0.55)] hover:bg-blue-400 hover:-translate-y-0.5 transition-all duration-200"
               >
-                Hablar con el equipo
+                Hablar sobre arquitectura
               </Link>
             </motion.div>
           </div>

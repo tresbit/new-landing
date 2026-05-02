@@ -212,7 +212,7 @@ export default function IntegrationsPageContent() {
                 href={`/#${SECTION_IDS.CONTACT}`}
                 className="btn-shimmer inline-block px-8 py-4 bg-orange-500 text-white font-semibold rounded-xl shadow-[0_0_24px_rgba(249,115,22,0.35)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)] hover:bg-orange-400 hover:-translate-y-0.5 transition-all duration-200"
               >
-                Hablar con el equipo
+                Consultar sobre integraciones
               </Link>
             </motion.div>
           </div>

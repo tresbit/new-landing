@@ -242,7 +242,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5, duration: 1 }}
               className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-xl mb-10"
             >
-              Diseñamos, desarrollamos y evolucionamos sistemas que resuelven problemas reales y acompañan el crecimiento de tu empresa.
+              Transformamos ideas en sistemas que resuelven problemas reales y acompañan el crecimiento concreto de tu empresa.
             </motion.p>
 
             <motion.div

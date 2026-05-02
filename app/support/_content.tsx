@@ -206,7 +206,7 @@ export default function SupportPageContent() {
                 href={`/#${SECTION_IDS.CONTACT}`}
                 className="btn-shimmer inline-block px-8 py-4 bg-[#38bdf8] text-[#07090f] font-semibold rounded-xl shadow-[0_0_24px_rgba(56,189,248,0.35)] hover:shadow-[0_0_40px_rgba(56,189,248,0.6)] hover:bg-[#7dd3fc] hover:-translate-y-0.5 transition-all duration-200"
               >
-                Hablar con el equipo
+                Consultar sobre soporte
               </Link>
             </motion.div>
           </div>

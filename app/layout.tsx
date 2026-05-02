@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     description:
       "Empresa de desarrollo de software a medida en Mendoza: aplicaciones web, mobile, automatización e integraciones. Hablemos de tu proyecto.",
   },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export const viewport: Viewport = {
