@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ShieldCheck, KeyRound, Lock, Activity } from "lucide-react"
+import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 import { BGPattern } from "@/components/ui/bg-pattern"
@@ -22,8 +23,9 @@ const pillars = [
     icon: Lock,
     title: "Encriptación de datos",
     subtitle: "En tránsito y en reposo",
-    description:
-      "TLS en todas las comunicaciones y cifrado AES-256 para datos persistentes. Aunque ocurra una filtración, los datos no son legibles ni utilizables por terceros.",
+    description: (
+      <><Term term="TLS" /> en todas las comunicaciones y cifrado <Term term="AES-256" /> para datos persistentes. Aunque ocurra una filtración, los datos no son legibles ni utilizables por terceros.</>
+    ),
     accent: "from-red-300/20 to-transparent",
     iconColor: "#fca5a5",
   },
@@ -84,7 +86,7 @@ export default function SecurityPageContent() {
                 Es parte del diseño.
               </h1>
               <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-                Cada sistema que construimos incorpora prácticas de seguridad desde el primer commit,
+                Cada sistema que construimos incorpora prácticas de seguridad desde el primer <Term term="Commit">commit</Term>,
                 no como parche final sino como decisión de arquitectura.
               </p>
             </motion.div>

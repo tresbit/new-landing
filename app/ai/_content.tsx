@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { BotMessageSquare, BarChart3, Cpu, Plug } from "lucide-react"
+import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 import { BGPattern } from "@/components/ui/bg-pattern"
@@ -39,7 +40,7 @@ const pillars = [
   {
     icon: Plug,
     subtitle: "OpenAI, modelos propios y más",
-    title: "Integración con APIs de IA",
+    title: (<>Integración con <Term term="APIs">APIs</Term> de IA</>),
     description:
       "Conectamos tu sistema con los modelos más relevantes del mercado o con infraestructura propia. La integración está diseñada para cambiar de proveedor o modelo sin reescribir tu lógica de negocio.",
     iconColor: "#818cf8",
@@ -99,7 +100,7 @@ export default function IAPageContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
                 <motion.div
-                  key={pillar.title}
+                  key={pillar.subtitle}
                   custom={i}
                   initial="hidden"
                   whileInView="visible"

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
+import { createPortal } from "react-dom"
 import { LEXICON } from "@/lib/lexicon"
 
 interface TermProps {
@@ -14,11 +15,13 @@ export default function Term({ term, definition, children, className = "" }: Ter
   const [showLoader, setShowLoader] = useState(false)
   const [showTooltip, setShowTooltip] = useState(false)
   const [pos, setPos] = useState({ top: 0, left: 0 })
+  const [mounted, setMounted] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const spanRef = useRef<HTMLSpanElement>(null)
   const termDef = definition || LEXICON[term] || ""
 
   useEffect(() => {
+    setMounted(true)
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current)
     }
@@ -79,19 +82,21 @@ export default function Term({ term, definition, children, className = "" }: Ter
         </svg>
       )}
 
-      {showTooltip && (
+      {showTooltip && mounted && createPortal(
         <span
           style={{
             position: "fixed",
             top: pos.top,
             left: pos.left,
             transform: "translate(-50%, calc(-100% - 10px))",
+            zIndex: 99999,
           }}
-          className="px-3 py-2 bg-[#0b1120] border border-white/20 rounded-lg shadow-xl z-9999 w-64 max-w-xs animate-fadeIn pointer-events-none"
+          className="px-3 py-2 bg-[#0b1120] border border-white/20 rounded-lg shadow-xl w-64 max-w-xs animate-fadeIn pointer-events-none"
         >
           <span className="text-slate-200 text-xs leading-relaxed">{termDef}</span>
           <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#0b1120]" />
-        </span>
+        </span>,
+        document.body
       )}
     </span>
   )

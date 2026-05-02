@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Rocket, RefreshCw, Target, GitMerge } from "lucide-react"
+import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 import { BGPattern } from "@/components/ui/bg-pattern"
@@ -13,8 +14,9 @@ const pillars = [
     icon: Rocket,
     subtitle: "Valor desde la primera semana",
     title: "Entregas tempranas con propósito",
-    description:
-      "Construimos una versión funcional lo antes posible, no para impresionar, sino para validar. Un MVP bien definido reduce el riesgo de construir lo que nadie necesita.",
+    description: (
+      <>Construimos una versión funcional lo antes posible, no para impresionar, sino para validar. Un <Term term="MVP" /> bien definido reduce el riesgo de construir lo que nadie necesita.</>
+    ),
     iconColor: "#fbbf24",
     accent: "from-yellow-400/15 to-transparent",
   },
@@ -38,7 +40,7 @@ const pillars = [
   },
   {
     icon: GitMerge,
-    subtitle: "CI/CD, tests y deploys automáticos",
+    subtitle: (<><Term term="CI/CD" />, tests y deploys automáticos</>),
     title: "Automatización del proceso de entrega",
     description:
       "Cada cambio pasa por pipelines automáticos de testing y despliegue. Esto elimina errores manuales, reduce el tiempo entre desarrollo y producción, y sostiene la velocidad a largo plazo.",
@@ -58,8 +60,8 @@ const fadeUp = {
 }
 
 const metrics = [
-  { value: "4–6 sem", label: "de MVP funcional a producción" },
-  { value: "100%", label: "de entregas con CI/CD automatizado" },
+  { value: "4–6 sem", label: (<>de <Term term="MVP" /> funcional a producción</>) },
+  { value: "100%", label: (<>de entregas con <Term term="CI/CD" /> automatizado</>) },
   { value: "Semanal", label: "cadencia de entregas en proyectos activos" },
 ]
 
@@ -105,7 +107,7 @@ export default function SpeedPageContent() {
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
               {metrics.map((m, i) => (
                 <motion.div
-                  key={m.label}
+                  key={m.value}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Plug, Webhook, RefreshCw, Globe } from "lucide-react"
+import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 import { BGPattern } from "@/components/ui/bg-pattern"
@@ -13,15 +14,16 @@ const pillars = [
     icon: Plug,
     title: "Tu software, integrado a lo que ya usás",
     subtitle: "Sin duplicar trabajo, sin errores manuales",
-    description:
-      "Conectamos tu sistema con CRMs, ERPs, pasarelas de pago y herramientas internas. Cada dato se sincroniza automáticamente: sin carga manual, sin pasos intermedios, sin margen de error entre plataformas.",
+    description: (
+      <>Conectamos tu sistema con <Term term="CRMs" />, <Term term="ERPs" />, pasarelas de pago y herramientas internas. Cada dato se sincroniza automáticamente: sin carga manual, sin pasos intermedios, sin margen de error entre plataformas.</>
+    ),
     iconColor: "#fb923c",
     accent: "from-orange-500/15 to-transparent",
   },
   {
     icon: Webhook,
     title: "Preparado para conectarse desde el día uno",
-    subtitle: "Arquitectura orientada a APIs",
+    subtitle: (<>Arquitectura orientada a <Term term="APIs">APIs</Term></>),
     description:
       "Diseñamos con estándares de interoperabilidad desde el primer sprint. Cuando necesités integrar algo nuevo —una herramienta, un proveedor, una plataforma— el sistema ya sabe cómo recibirlo sin intervención mayor.",
     iconColor: "#fdba74",
@@ -164,7 +166,7 @@ export default function IntegrationsPageContent() {
                 Nos conectamos con lo que ya usás
               </h2>
               <p className="text-slate-400 text-sm">
-                Y con cualquier plataforma que tenga una API abierta o documentación.
+                Y con cualquier plataforma que tenga una <Term term="API">API</Term> abierta o documentación.
               </p>
             </motion.div>
             <motion.div

@@ -3,7 +3,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { Plug, Webhook, RefreshCw, Globe } from "lucide-react"
-import { SECTION_IDS } from "@/lib/config"
 import Term from "@/components/ui/term-tooltip"
 
 const blocks: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }>, tag: string, title: string, description: React.ReactNode }[] = [
@@ -38,6 +37,17 @@ const blocks: { icon: React.ComponentType<{ className?: string; strokeWidth?: nu
     description:
       "Sin ataduras a un proveedor específico. Construimos con estándares abiertos para que puedas migrar, cambiar herramientas o escalar sin reescribir desde cero.",
   },
+]
+
+const connectedItems = [
+  "Salesforce / HubSpot",
+  "SAP / Odoo / ERP propio",
+  "Stripe / MercadoPago",
+  "WhatsApp Business API",
+  "Google Workspace",
+  "Slack / Teams",
+  "Shopify / WooCommerce",
+  "AWS / GCP / Azure",
 ]
 
 const cardVariants = {
