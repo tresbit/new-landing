@@ -8,6 +8,7 @@ import Footer from "@/components/sections/Footer"
 import { BGPattern } from "@/components/ui/bg-pattern"
 import { SECTION_IDS } from "@/lib/config"
 import Link from "next/link"
+import Breadcrumb from "@/components/ui/breadcrumb"
 
 const pillars = [
   {
@@ -74,6 +75,7 @@ export default function SpeedPageContent() {
         {/* Hero */}
         <section className="relative overflow-hidden bg-[#0b1120] pt-40 pb-28 border-b border-white/[0.07]">
           <BGPattern variant="horizontal-lines" mask="fade-right" style={{ "--background": "#0b1120" } as React.CSSProperties} />
+          <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Entrega Rápida" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
