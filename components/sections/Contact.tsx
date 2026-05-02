@@ -1,14 +1,19 @@
 "use client"
 
 import { useState, useRef } from "react"
+import dynamic from "next/dynamic"
 import { COMPANY_INFO, SECTION_IDS } from "@/lib/config"
 import { Button } from "@/components/ui/button"
-import { DottedSurface } from "@/components/ui/dotted-surface"
 import { ContactCard } from "@/components/ui/contact-card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
+
+const DottedSurface = dynamic(
+  () => import("@/components/ui/dotted-surface").then((m) => m.DottedSurface),
+  { ssr: false },
+)
 
 type FormState = "idle" | "sending" | "success" | "error"
 

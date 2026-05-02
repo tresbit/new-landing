@@ -3,8 +3,9 @@
 import { SECTION_IDS, ANIMATION_CONFIG } from "@/lib/config"
 import { FeatureCard } from "@/components/ui/grid-feature-cards"
 import { motion } from "framer-motion"
-import { Activity, Brain, Layers, Link, Rocket, ShieldCheck } from "lucide-react"
+import { Activity, Brain, Layers, Link as LinkIcon, Rocket, ShieldCheck } from "lucide-react"
 import FloatingPathsBackground from "@/components/ui/floating-paths-background"
+import Link from "next/link"
 
 const features = [
   {
@@ -37,7 +38,7 @@ const features = [
   },
   {
     title: "Integraciones sin fricción",
-    icon: Link,
+    icon: LinkIcon,
     href: "/integrations",
     description:
       "Conectamos tu sistema con herramientas externas, APIs y plataformas existentes para evitar silos y optimizar procesos.",
@@ -59,7 +60,7 @@ export default function WhyUs() {
         <motion.div
           initial={{ opacity: 0, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          viewport={{ once: false, margin: "-80px" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14 max-w-2xl mx-auto"
         >
@@ -74,7 +75,7 @@ export default function WhyUs() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-60px" }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 divide-y divide-x divide-dashed divide-white/35 border border-dashed border-white/35 mb-12"
         >
@@ -84,13 +85,13 @@ export default function WhyUs() {
         </motion.div>
 
         <div className="text-center">
-          <a
+          <Link
             href={`#${SECTION_IDS.CONTACT}`}
             data-track="cta_consulta"
             className="inline-block px-8 py-4 bg-[#286291] text-white font-semibold rounded-xl shadow-[0_0_24px_rgba(40,98,145,0.45)] hover:shadow-[0_0_40px_rgba(91,168,216,0.55)] hover:bg-[#286291]/90 hover:-translate-y-0.5 transition-all duration-200"
           >
             Hablar sobre tu proyecto
-          </a>
+          </Link>
         </div>
       </div>
     </section>

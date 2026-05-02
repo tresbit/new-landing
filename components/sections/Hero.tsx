@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { SECTION_IDS, ANIMATION_CONFIG } from "@/lib/config"
 
 // Geometric Grid Paths
@@ -250,22 +251,22 @@ export default function HeroSection() {
               transition={{ delay: 0.8, duration: 0.6, type: "spring", stiffness: 100 }}
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             >
-              <a href={`#${SECTION_IDS.CONTACT}`} data-track="cta_contacto">
+              <Link href={`#${SECTION_IDS.CONTACT}`} data-track="cta_contacto">
                 <Button
                   size="lg"
                   className="px-8 py-6 text-base bg-[#286291] hover:bg-[#286291]/90 text-white rounded-xl shadow-[0_0_24px_rgba(40,98,145,0.45)] hover:shadow-[0_0_40px_rgba(91,168,216,0.55)] transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Hablar con nosotros
                 </Button>
-              </a>
-              <a href={`#${SECTION_IDS.SECURITY}`} data-track="cta_servicios">
+              </Link>
+              <Link href={`#${SECTION_IDS.SECURITY}`} data-track="cta_servicios">
                 <Button
                   size="lg"
                   className="px-8 py-6 text-base bg-white/10 border border-white/30 text-white hover:bg-white hover:text-[#0b1120] rounded-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Ver cómo trabajamos
                 </Button>
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -281,7 +282,8 @@ export default function HeroSection() {
               alt="App móvil demostrativa Tresbit"
               width={400}
               height={800}
-              priority
+              loading="eager"
+              sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 320px, 380px"
               className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] h-auto object-contain drop-shadow-2xl"
             />
           </motion.div>

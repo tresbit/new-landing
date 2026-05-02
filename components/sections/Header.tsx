@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { SECTION_IDS } from "@/lib/config"
 import { cn } from "@/lib/utils"
 
@@ -33,34 +34,35 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="/" className="flex items-center" aria-label="Tresbit - inicio">
+        <Link href="/" className="flex items-center" aria-label="Tresbit - inicio">
           <Image
             src="/isotipo_white.svg"
             alt="Tresbit"
             width={36}
             height={36}
-            style={{ width: 36, height: "auto" }}
-            priority
+            style={{ width: 36, height: 36 }}
+            loading="eager"
+            unoptimized
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6" aria-label="Navegación principal">
           {navItems.slice(0, 3).map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-white/90 hover:text-white text-sm font-medium transition-colors duration-200"
             >
               {item.text}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href={`/#${SECTION_IDS.CONTACT}`}
             className="ml-2 px-4 py-2 rounded-lg border-2 border-white text-white text-sm font-semibold hover:bg-white hover:text-[#286291] transition-all duration-200"
           >
             Contacto
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -101,14 +103,14 @@ export default function Header() {
       >
         <nav className="px-4 py-4 flex flex-col gap-1" aria-label="Navegación móvil">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               onClick={() => setMenuOpen(false)}
               className="py-3 text-white/90 hover:text-white text-sm font-medium border-b border-white/10 last:border-0 transition-colors"
             >
               {item.text}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

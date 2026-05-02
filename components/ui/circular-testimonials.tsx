@@ -6,7 +6,8 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Testimonial {
@@ -181,14 +182,19 @@ export const CircularTestimonials = ({
           ref={imageContainerRef}
         >
           {testimonials.map((testimonial, index) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <div
               key={testimonial.src}
-              src={testimonial.src}
-              alt={testimonial.name}
-              className="absolute h-full w-full rounded-3xl object-cover shadow-2xl"
+              className="absolute h-full w-full rounded-3xl overflow-hidden shadow-2xl"
               style={getImageStyle(index)}
-            />
+            >
+              <Image
+                src={testimonial.src}
+                alt={testimonial.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           ))}
         </div>
 
@@ -249,7 +255,7 @@ export const CircularTestimonials = ({
                 backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg,
               }}
             >
-              <FaArrowLeft size={18} color={colorArrowFg} />
+              <ChevronLeft size={18} color={colorArrowFg} />
             </button>
             <button
               onClick={handleNext}
@@ -261,7 +267,7 @@ export const CircularTestimonials = ({
                 backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg,
               }}
             >
-              <FaArrowRight size={18} color={colorArrowFg} />
+              <ChevronRight size={18} color={colorArrowFg} />
             </button>
           </div>
         </div>

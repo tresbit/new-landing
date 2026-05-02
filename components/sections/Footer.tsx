@@ -1,5 +1,6 @@
 import { COMPANY_INFO, SOCIAL_LINKS, SECTION_IDS } from "@/lib/config"
 import Image from "next/image"
+import Link from "next/link"
 
 const SANITIZED_PHONE = COMPANY_INFO.PHONE.replace(/[^\d+]/g, "")
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(COMPANY_INFO.ADDRESS)}`
@@ -36,9 +37,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href="/" aria-label="Tresbit - inicio" className="inline-block mb-4">
-              <Image src="/isotipo_white.svg" alt="Tresbit" width={40} height={40} style={{ width: 40, height: "auto" }} loading="lazy" />
-            </a>
+            <Link href="/" aria-label="Tresbit - inicio" className="inline-block mb-4">
+              <Image src="/isotipo_white.svg" alt="Tresbit" width={40} height={40} style={{ width: 40, height: 40 }} loading="lazy" unoptimized />
+            </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               {COMPANY_INFO.TAGLINE}
             </p>
@@ -86,12 +87,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <Link
                       href={link.url}
                       className="text-sm text-slate-400 hover:text-[#5ba8d8] transition-colors"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

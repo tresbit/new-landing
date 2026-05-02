@@ -1,5 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans, Inter_Tight } from "next/font/google";
 import "./globals.css";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Tresbit | Software a medida en Mendoza",
@@ -18,6 +34,14 @@ export const metadata: Metadata = {
     siteName: "Tresbit",
     locale: "es_AR",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Tresbit" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tresbit | Software a medida en Mendoza",
+    description:
+      "Soluciones digitales a medida desde Mendoza: desarrollo web y mobile, automatización de procesos, backoffice y landings.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -33,16 +57,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="h-full antialiased">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter+Tight:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="min-h-full flex flex-col" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <html lang="es" className={`h-full antialiased ${plusJakartaSans.variable} ${interTight.variable}`}>
+      <body className="min-h-full flex flex-col">
         {children}
       </body>
     </html>

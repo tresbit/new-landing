@@ -1,6 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 import React, { useEffect, useRef, useState } from "react"
 
 type FeatureType = {
@@ -51,9 +52,9 @@ export function FeatureCard({ feature, className, ...props }: FeatureCardProps) 
 
   if (feature.href) {
     return (
-      <a href={feature.href} className="block">
+      <Link href={feature.href} className="block">
         {inner}
-      </a>
+      </Link>
     )
   }
 
