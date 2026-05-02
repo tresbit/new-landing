@@ -38,7 +38,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" aria-label="Tresbit - inicio" className="inline-block mb-4">
-              <Image src="/isotipo_white.svg" alt="Tresbit" width={40} height={40} style={{ width: 40, height: 40 }} loading="lazy" unoptimized />
+              <Image src="/isotipo_black.svg" alt="Tresbit" width={107} height={40} style={{ width: 107, height: 40 }} loading="lazy" unoptimized />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               {COMPANY_INFO.TAGLINE}

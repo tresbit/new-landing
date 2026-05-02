@@ -36,11 +36,11 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center" aria-label="Tresbit - inicio">
           <Image
-            src="/isotipo_white.svg"
+            src="/isotipo_black.svg"
             alt="Tresbit"
-            width={36}
+            width={96}
             height={36}
-            style={{ width: 36, height: 36 }}
+            style={{ width: 96, height: 36 }}
             loading="eager"
             unoptimized
           />
