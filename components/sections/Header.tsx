@@ -41,7 +41,7 @@ export default function Header() {
             width={96}
             height={36}
             style={{ width: 96, height: 36 }}
-            loading="eager"
+            priority
             unoptimized
           />
         </Link>

@@ -113,21 +113,21 @@ export default function Contact() {
                 <Label htmlFor="name">
                   Nombre <span aria-hidden="true" className="text-red-400">*</span>
                 </Label>
-                <Input id="name" name="name" type="text" required placeholder="Tu nombre" />
+                <Input id="name" name="name" type="text" required placeholder="Tu nombre" aria-label="Nombre completo" aria-required="true" />
               </div>
 
               <div className="flex flex-col gap-1.5">
                 <Label htmlFor="email">
                   Email <span aria-hidden="true" className="text-red-400">*</span>
                 </Label>
-                <Input id="email" name="email" type="email" required placeholder="tu@email.com" />
+                <Input id="email" name="email" type="email" required placeholder="tu@email.com" aria-label="Dirección de email" aria-required="true" />
               </div>
 
               <div className="flex flex-col gap-1.5">
                 <Label htmlFor="phone">
                   Telefono <span className="text-muted-foreground text-xs">(opcional)</span>
                 </Label>
-                <Input id="phone" name="phone" type="tel" placeholder="+54 9 261 000 0000" />
+                <Input id="phone" name="phone" type="tel" placeholder="+54 9 261 000 0000" aria-label="Número de teléfono (opcional)" />
               </div>
 
               <div className="flex flex-col gap-1.5">
@@ -139,6 +139,8 @@ export default function Contact() {
                   name="subject"
                   required
                   defaultValue=""
+                  aria-label="Asunto del mensaje"
+                  aria-required="true"
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <option value="" disabled>Selecciona un asunto</option>
@@ -159,6 +161,8 @@ export default function Contact() {
                   rows={4}
                   placeholder="Contanos qué necesitás resolver"
                   className="resize-none"
+                  aria-label="Mensaje"
+                  aria-required="true"
                 />
               </div>
             </div>
