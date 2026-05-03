@@ -102,9 +102,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
           <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-300 text-xs">
-            © {year} {COMPANY_INFO.NAME}. Todos los derechos reservados.
-          </p>
+          <div className="flex items-center gap-5 flex-wrap justify-center sm:justify-start">
+            <p className="text-slate-500 text-xs">
+              © {year} {COMPANY_INFO.NAME}. Todos los derechos reservados.
+            </p>
+            <Link href="/privacy" className="text-slate-500 text-xs hover:text-slate-300 transition-colors">
+              Política de Privacidad
+            </Link>
+          </div>
 
           {/* Social links */}
           <div className="flex items-center gap-4">

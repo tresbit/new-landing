@@ -1,0 +1,27 @@
+# Tresbit
+
+> Empresa de desarrollo de software a medida en Mendoza, Argentina.
+
+Tresbit diseña, desarrolla y evoluciona sistemas web y mobile adaptados a las necesidades específicas de cada negocio. Trabajamos con empresas que necesitan tecnología confiable, escalable y bien construida.
+
+## Servicios
+
+- Desarrollo de software a medida (aplicaciones web, mobile, plataformas)
+- Integración de Inteligencia Artificial (automatización, asistentes, análisis de patrones)
+- Integraciones de software y APIs (CRMs, ERPs, pasarelas de pago)
+- Arquitectura de software escalable
+- Entrega rápida / Time to Market (MVPs en 4-6 semanas)
+- Soporte y mantenimiento operativo
+
+## Tecnologías
+
+Next.js, React, TypeScript, Node.js, AWS, Railway, Azure, Google Cloud, Netlify, Digital Ocean.
+
+## Contacto
+
+- Web: https://tresbit.com
+- Email: contact@tresbit.com
+- Teléfono: +54 9 261 605 0326
+- Dirección: Ceretti 244, Godoy Cruz, Mendoza 5501, Argentina
+- LinkedIn: https://linkedin.com/company/tresbit
+- GitHub: https://github.com/tresbitsoft

@@ -7,6 +7,7 @@ import WhyUs from "@/components/sections/WhyUs"
 import Showcase from "@/components/sections/Showcase"
 import Description from "@/components/sections/Description"
 import Partners from "@/components/sections/Partners"
+import Testimonials from "@/components/sections/Testimonials"
 import Contact from "@/components/sections/Contact"
 import Footer from "@/components/sections/Footer"
 
@@ -168,6 +169,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Testimonials />
         <Features />
         <WhyUs />
         <Showcase />
