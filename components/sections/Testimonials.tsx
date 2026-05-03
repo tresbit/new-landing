@@ -1,42 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Quote } from "lucide-react"
+import { Quote, ArrowRight, UserRound } from "lucide-react"
+import Link from "next/link"
+import { SECTION_IDS } from "@/lib/config"
 
-const testimonials = [
-  {
-    quote: "Tresbit transformó nuestro proceso de pedidos en una plataforma digital eficiente. Lo que antes nos llevaba horas está automatizado. El equipo entendió nuestra operación desde el primer día.",
-    name: "Martina García",
-    role: "Directora Operativa",
-    company: "Distribuidora del Sur",
-    initials: "MG",
-    accent: "#5ba8d8",
-  },
-  {
-    quote: "Implementamos un asistente de IA para atención al cliente que responde el 80% de las consultas sin intervención humana. El ROI fue claro desde el primer mes.",
-    name: "Carlos Mendoza",
-    role: "CEO",
-    company: "Fintech Cuyo",
-    initials: "CM",
-    accent: "#a78bfa",
-  },
-  {
-    quote: "Necesitábamos conectar nuestro sistema con tres plataformas externas y Tresbit lo resolvió en tiempo récord. La integración es estable y no nos dio un solo problema.",
-    name: "Lucía Romero",
-    role: "Gerente de Tecnología",
-    company: "Logística Andina",
-    initials: "LR",
-    accent: "#34d399",
-  },
-  {
-    quote: "Entregaron nuestro MVP en 5 semanas. Era exactamente lo que necesitábamos para validar el producto con usuarios reales antes de invertir más en desarrollo.",
-    name: "Diego Funes",
-    role: "Fundador",
-    company: "PropTech Argentina",
-    initials: "DF",
-    accent: "#f59e0b",
-  },
-]
+const testimonial = {
+  quote:
+    "Tresbit transformó nuestro proceso de pedidos en una plataforma digital eficiente. Lo que antes nos llevaba horas está automatizado. El equipo entendió nuestra operación desde el primer día.",
+  name: "Pablo García",
+  role: "Director Operativo",
+  company: "Embragues San Pablo",
+  href: "https://www.instagram.com/embraguessp/", // → reemplazar con URL real
+  imageSrc: "https://scontent.fmdz5-1.fna.fbcdn.net/v/t39.30808-6/447568842_968097598347782_1317527126779684680_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=A3tFBc-HOJcQ7kNvwEvrMKK&_nc_oc=AdqyCwW3xRH-tGmuYoxdhUSgysnnMReBFMBmfaE5IFTo11UdUY5HH1xHdYHfUxJILT4&_nc_zt=23&_nc_ht=scontent.fmdz5-1.fna&_nc_gid=Lxnq8riANosT2k7fQ33C-A&_nc_ss=7b289&oh=00_Af4E5kn3_GVXckZsIJj2gEpdMoOmoGRy-D5yzExolBnMEg&oe=69FCB4D5",
+  initials: "PG",
+  accent: "#5ba8d8",
+}
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
@@ -51,13 +30,13 @@ const fadeUp = {
 export default function Testimonials() {
   return (
     <section className="bg-[#07090f] py-24 border-t border-white/[0.07]">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
             Lo que dicen nuestros{" "}
@@ -69,54 +48,108 @@ export default function Testimonials() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {testimonials.map((t, i) => (
-            <motion.article
-              key={t.name}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              variants={fadeUp}
-              className="relative bg-[#0b1120] border border-white/[0.07] rounded-2xl p-8 flex flex-col gap-6 hover:border-white/[0.12] transition-colors duration-200"
-            >
-              {/* Stars */}
-              <div className="flex gap-1" aria-label="5 de 5 estrellas">
-                {Array.from({ length: 5 }).map((_, s) => (
-                  <svg key={s} width="16" height="16" viewBox="0 0 20 20" fill="#f59e0b" aria-hidden="true">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
 
-              {/* Quote */}
-              <div className="relative">
-                <Quote
-                  className="absolute -top-1 -left-1 opacity-20"
-                  style={{ color: t.accent }}
-                  size={28}
-                  aria-hidden="true"
+          {/* Testimonio real */}
+          <motion.article
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={fadeUp}
+            className="bg-[#0b1120] border border-white/[0.07] rounded-2xl p-8 flex flex-col gap-6 hover:border-white/[0.14] transition-colors duration-200"
+          >
+            <span className="text-amber-400 text-base tracking-wide" aria-label="5 de 5 estrellas">★★★★★</span>
+
+            <div className="relative flex-1">
+              <Quote
+                className="absolute -top-1 -left-1 opacity-20"
+                style={{ color: testimonial.accent }}
+                size={28}
+                aria-hidden="true"
+              />
+              <blockquote className="text-slate-300 text-base leading-relaxed pl-6">
+                {testimonial.quote}
+              </blockquote>
+            </div>
+
+            <div className="flex items-center gap-4 pt-2 border-t border-white/[0.06]">
+              {testimonial.imageSrc ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={testimonial.imageSrc}
+                  alt={testimonial.name}
+                  width={44}
+                  height={44}
+                  className="w-11 h-11 rounded-full object-cover shrink-0"
+                  loading="lazy"
                 />
-                <blockquote className="text-slate-300 text-base leading-relaxed pl-6">
-                  {t.quote}
-                </blockquote>
-              </div>
-
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-2 border-t border-white/[0.06]">
+              ) : (
                 <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-                  style={{ background: `${t.accent}28`, border: `1.5px solid ${t.accent}50`, color: t.accent }}
+                  className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                  style={{
+                    background: `${testimonial.accent}22`,
+                    border: `1.5px solid ${testimonial.accent}44`,
+                    color: testimonial.accent,
+                  }}
                   aria-hidden="true"
                 >
-                  {t.initials}
+                  {testimonial.initials}
                 </div>
-                <div>
-                  <p className="text-white text-sm font-semibold">{t.name}</p>
-                  <p className="text-slate-500 text-xs">{t.role} · {t.company}</p>
+              )}
+              <div className="min-w-0">
+                <p className="text-white text-sm font-semibold">{testimonial.name}</p>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <p className="text-slate-500 text-xs">{testimonial.role} ·</p>
+                  {testimonial.href ? (
+                    <a
+                      href={testimonial.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[#5ba8d8] hover:text-white transition-colors truncate"
+                    >
+                      {testimonial.company}
+                    </a>
+                  ) : (
+                    <p className="text-slate-500 text-xs">{testimonial.company}</p>
+                  )}
                 </div>
               </div>
-            </motion.article>
-          ))}
+            </div>
+          </motion.article>
+
+          {/* CTA — "Aquí deberías estar vos" */}
+          <motion.div
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={fadeUp}
+            className="bg-[#0b1120]/40 border border-dashed border-white/[0.12] rounded-2xl p-8 flex flex-col items-center justify-center gap-6 text-center hover:border-white/[0.22] transition-colors duration-200 group"
+          >
+            <div
+              className="w-16 h-16 rounded-full flex items-center justify-center border border-dashed border-white/20 text-slate-600 group-hover:border-white/30 group-hover:text-slate-500 transition-all duration-300"
+            >
+              <UserRound size={28} strokeWidth={1.2} />
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-white text-xl font-bold tracking-tight">
+                Aquí deberías estar vos
+              </p>
+              <p className="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
+                Empresas de Mendoza y Argentina confían en Tresbit para resolver sus desafíos tecnológicos. ¿Tu negocio es el próximo?
+              </p>
+            </div>
+
+            <Link
+              href={`/#${SECTION_IDS.CONTACT}`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white border border-white/20 hover:bg-white/8 hover:border-white/30 transition-all duration-200 group/btn"
+            >
+              Hablemos
+              <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform duration-200" />
+            </Link>
+          </motion.div>
+
         </div>
       </div>
     </section>

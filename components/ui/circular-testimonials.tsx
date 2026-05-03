@@ -190,8 +190,10 @@ export const CircularTestimonials = ({
               <Image
                 src={testimonial.src}
                 alt={testimonial.name}
-                fill
-                className="object-cover"
+                width={600}
+                height={320}
+                priority={index === 0}
+                className="object-cover w-full h-full"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>

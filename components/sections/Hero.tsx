@@ -278,7 +278,7 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           >
             <Image
-              src="/mockMobile.webp"
+              src="/aplicacion-movil-software-a-medida.webp"
               alt="App móvil demostrativa Tresbit"
               width={400}
               height={800}

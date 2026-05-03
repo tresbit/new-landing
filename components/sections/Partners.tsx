@@ -45,6 +45,7 @@ export default function Partners() {
                     decoding="async"
                     className="max-h-12 w-auto object-contain"
                   />
+                  <span className="sr-only">{p.name}</span>
                 </a>
               </li>
             ))}

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { SECTION_IDS } from "@/lib/config"
 import { cn } from "@/lib/utils"
@@ -35,15 +34,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center" aria-label="Tresbit - inicio">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/isotipo_black.svg"
             alt="Tresbit"
             width={96}
             height={36}
+            fetchPriority="high"
+            loading="eager"
             style={{ width: 96, height: 36 }}
-            priority
-            unoptimized
           />
+          <span className="sr-only">Tresbit – inicio</span>
         </Link>
 
         {/* Desktop nav */}
@@ -67,7 +68,7 @@ export default function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+          className="md:hidden flex flex-col gap-1.5 p-2 rounded focus-visible:outline-2 focus-visible:outline-white"
           aria-label="Abrir menú"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((o) => !o)}

@@ -10,21 +10,21 @@ const SERVICES = [
     designation: <>Software · <Term term="Full-Stack" /></>,
     quote:
       "Construimos sistemas adaptados a tu negocio, no al revés. Desde aplicaciones web hasta plataformas complejas, diseñadas para integrarse y escalar sin fricción.",
-    src: "/customize-develop.webp",
+    src: "/desarrollo-software-personalizado.webp",
   },
   {
     name: "Consultoría tecnológica",
     designation: "Estrategia · Innovación",
     quote:
       "Te ayudamos a tomar decisiones tecnológicas con criterio. Evaluamos, priorizamos y definimos una hoja de ruta clara para avanzar sin improvisar.",
-    src: "/consulting.webp",
+    src: "/consultoria-tecnologica-empresas.webp",
   },
   {
     name: "Soporte continuo",
     designation: "Mantenimiento · 24/7",
     quote:
       "Acompañamos el sistema en producción para evitar caídas, resolver problemas rápido y mejorar de forma constante.",
-    src: "/customer-support.webp",
+    src: "/soporte-tecnico-software-empresas.webp",
   },
 ]
 
