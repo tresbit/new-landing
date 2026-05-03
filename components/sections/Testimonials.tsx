@@ -44,7 +44,7 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.5, ease: "easeOut", delay: i * 0.1 },
+    transition: { duration: 0.5, ease: "easeOut" as const, delay: i * 0.1 },
   }),
 }
 

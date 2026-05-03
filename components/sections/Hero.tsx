@@ -282,7 +282,7 @@ export default function HeroSection() {
               alt="App móvil demostrativa Tresbit"
               width={400}
               height={800}
-              loading="eager"
+              priority
               sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 320px, 380px"
               className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] h-auto object-contain drop-shadow-2xl"
             />

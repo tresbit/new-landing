@@ -6,7 +6,9 @@
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\DarthKenar\\\\Desktop\\\\3it\\\\REPOS\\\\new-landing\" -Force)",
       "Bash(Select-Object Name)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\DarthKenar\\\\Desktop\\\\3it\\\\REPOS\\\\new-landing\" -Directory)",
-      "Bash(Remove-Item -Recurse -Force \"c:\\\\Users\\\\DarthKenar\\\\Desktop\\\\3it\\\\REPOS\\\\new-landing\\\\app\\\\privacidad\")"
+      "Bash(Remove-Item -Recurse -Force \"c:\\\\Users\\\\DarthKenar\\\\Desktop\\\\3it\\\\REPOS\\\\new-landing\\\\app\\\\privacidad\")",
+      "Bash(npx skills *)",
+      "Bash(npm run *)"
     ]
   }
 }
