@@ -1,21 +1,25 @@
 # Tresbit
 
-> Empresa de desarrollo de software a medida en Mendoza, Argentina.
+> Empresa de desarrollo de software a medida en Mendoza, Argentina. Construimos sistemas web y mobile para empresas que necesitan tecnología confiable, escalable y bien construida.
 
-Tresbit diseña, desarrolla y evoluciona sistemas web y mobile adaptados a las necesidades específicas de cada negocio. Trabajamos con empresas que necesitan tecnología confiable, escalable y bien construida.
+Tresbit diseña, desarrolla y evoluciona aplicaciones y plataformas adaptadas a las necesidades específicas de cada negocio. Trabajamos con empresas de Mendoza y toda Argentina.
 
 ## Servicios
 
-- Desarrollo de software a medida (aplicaciones web, mobile, plataformas)
-- Integración de Inteligencia Artificial (automatización, asistentes, análisis de patrones)
-- Integraciones de software y APIs (CRMs, ERPs, pasarelas de pago)
-- Arquitectura de software escalable
-- Entrega rápida / Time to Market (MVPs en 4-6 semanas)
-- Soporte y mantenimiento operativo
+- [Desarrollo de Software a Medida](https://tresbit.com/): Aplicaciones web, mobile y plataformas digitales diseñadas para integrarse y escalar.
+- [Integración de Inteligencia Artificial](https://tresbit.com/ai): Automatización de flujos, asistentes entrenados con datos propios y detección de patrones.
+- [Integraciones y APIs](https://tresbit.com/integrations): Conexión con CRMs, ERPs, pasarelas de pago y plataformas externas.
+- [Arquitectura Escalable](https://tresbit.com/architecture): Diseño de sistemas mantenibles sin deuda técnica, módulos desacoplados.
+- [Entrega Rápida / Time to Market](https://tresbit.com/speed): MVPs en 4-6 semanas con iteraciones semanales y CI/CD automatizado.
+- [Soporte y Mantenimiento](https://tresbit.com/support): Monitoreo activo, mantenimiento preventivo y evolución continua en producción.
+- [Seguridad en Software](https://tresbit.com/security): Autenticación robusta, cifrado AES-256, arquitectura de mínimo privilegio.
 
-## Tecnologías
+## Empresa
 
-Next.js, React, TypeScript, Node.js, AWS, Railway, Azure, Google Cloud, Netlify, Digital Ocean.
+- [Quiénes Somos](https://tresbit.com/about): Historia, equipo y valores de Tresbit.
+- [Contacto](https://tresbit.com/contact): Formulario de contacto, dirección y teléfono.
+- [Política de Privacidad](https://tresbit.com/privacy): Tratamiento de datos personales según Ley 25.326 argentina.
+- [Términos y Condiciones](https://tresbit.com/terms): Condiciones de contratación de servicios.
 
 ## Contacto
 

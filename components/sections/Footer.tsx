@@ -11,6 +11,7 @@ const navSections = [
     title: "Navega",
     links: [
       { name: "Inicio", url: "/" },
+      { name: "Quiénes somos", url: "/about" },
       { name: "Características", url: `/#${SECTION_IDS.FEATURES}` },
       { name: "Servicios", url: `/#${SECTION_IDS.SECURITY}` },
       { name: "Aliados", url: `/#${SECTION_IDS.PARTNERS}` },
@@ -109,6 +110,9 @@ export default function Footer() {
             </p>
             <Link href="/privacy" className="text-slate-500 text-xs hover:text-slate-300 transition-colors">
               Política de Privacidad
+            </Link>
+            <Link href="/terms" className="text-slate-500 text-xs hover:text-slate-300 transition-colors">
+              Términos y Condiciones
             </Link>
           </div>
 
