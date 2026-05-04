@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { BotMessageSquare, BarChart3, Cpu, Plug } from "lucide-react"
 import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
@@ -70,7 +70,7 @@ export default function IAPageContent() {
           <BGPattern variant="checkerboard" mask="fade-top" style={{ "--background": "#0b1120" } as React.CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Inteligencia Artificial" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -92,7 +92,7 @@ export default function IAPageContent() {
                 Integramos modelos de IA en sistemas reales, con casos de uso concretos y
                 resultados medibles. Sin promesas vacías, sin complejidad innecesaria.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -101,7 +101,7 @@ export default function IAPageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <motion.div
+                <m.div
                   key={pillar.subtitle}
                   custom={i}
                   initial="hidden"
@@ -140,7 +140,7 @@ export default function IAPageContent() {
                       {pillar.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function IAPageContent() {
         {/* Use case highlight strip */}
         <section className="bg-[#0d1020] py-16 border-b border-white/[0.07]">
           <div className="max-w-5xl mx-auto px-4 md:px-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -160,7 +160,7 @@ export default function IAPageContent() {
                 ¿Dónde tiene sentido integrar IA en tu sistema?
               </h2>
               <p className="text-slate-500 text-sm mt-2">Ejemplos reales, no teoría.</p>
-            </motion.div>
+            </m.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {[
@@ -171,7 +171,7 @@ export default function IAPageContent() {
                 { label: "Chatbot de onboarding para usuarios nuevos" },
                 { label: "Predicción de demanda o stock mínimo" },
               ].map((item, i) => (
-                <motion.div
+                <m.div
                   key={item.label}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function IAPageContent() {
                     style={{ backgroundColor: i % 2 === 0 ? "#a78bfa" : "#818cf8", marginTop: "6px" }}
                   />
                   <p className="text-slate-300 text-sm leading-snug">{item.label}</p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function IAPageContent() {
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -215,7 +215,7 @@ export default function IAPageContent() {
               >
                 Consultar sobre IA
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
       </main>

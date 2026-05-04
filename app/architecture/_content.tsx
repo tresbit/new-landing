@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Blocks, FileCode2, GitBranch, ShieldCheck } from "lucide-react"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
@@ -80,7 +80,7 @@ export default function ArchitecturePageContent() {
           <BGPattern variant="grid" mask="fade-edges" style={{ "--background": "#0b1120" } as React.CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Arquitectura" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -100,7 +100,7 @@ export default function ArchitecturePageContent() {
                 Un sistema que funciona hoy pero no puede crecer mañana no es una solución:
                 es un problema diferido. Diseñamos con orden desde el principio.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -109,7 +109,7 @@ export default function ArchitecturePageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <motion.div
+                <m.div
                   key={pillar.title}
                   custom={i}
                   initial="hidden"
@@ -145,7 +145,7 @@ export default function ArchitecturePageContent() {
                       {pillar.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function ArchitecturePageContent() {
         {/* Principles strip */}
         <section className="bg-[#0d1728] py-20 border-b border-white/[0.07]">
           <div className="max-w-5xl mx-auto px-4 md:px-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -167,8 +167,8 @@ export default function ArchitecturePageContent() {
               <p className="text-slate-400 text-sm">
                 No como checklist, sino como forma de trabajo.
               </p>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -183,14 +183,14 @@ export default function ArchitecturePageContent() {
                   {item}
                 </span>
               ))}
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -208,7 +208,7 @@ export default function ArchitecturePageContent() {
               >
                 Hablar sobre arquitectura
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
       </main>

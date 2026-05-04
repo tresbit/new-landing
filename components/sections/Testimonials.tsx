@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Quote, ArrowRight, UserRound } from "lucide-react"
 import Link from "next/link"
 import { SECTION_IDS } from "@/lib/config"
@@ -31,7 +31,7 @@ export default function Testimonials() {
   return (
     <section className="bg-[#07090f] py-24 border-t border-white/[0.07]">
       <div className="max-w-4xl mx-auto px-4 md:px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -45,12 +45,12 @@ export default function Testimonials() {
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
             Resultados reales de empresas que confiaron en Tresbit.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
           {/* Testimonio real */}
-          <motion.article
+          <m.article
             custom={0}
             initial="hidden"
             whileInView="visible"
@@ -115,10 +115,10 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
-          </motion.article>
+          </m.article>
 
           {/* CTA — "Aquí deberías estar vos" */}
-          <motion.div
+          <m.div
             custom={1}
             initial="hidden"
             whileInView="visible"
@@ -148,7 +148,7 @@ export default function Testimonials() {
               Hablemos
               <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform duration-200" />
             </Link>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

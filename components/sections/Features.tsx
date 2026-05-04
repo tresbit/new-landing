@@ -1,6 +1,14 @@
 ﻿"use client"
 
-import { CircularTestimonials } from "@/components/ui/circular-testimonials"
+import dynamic from "next/dynamic"
+
+const CircularTestimonials = dynamic(
+  () => import("@/components/ui/circular-testimonials").then((mod) => mod.CircularTestimonials),
+  {
+    ssr: false,
+    loading: () => <div className="h-96 w-full animate-pulse rounded-xl bg-white/5" aria-busy="true" />,
+  }
+)
 import { SECTION_IDS } from "@/lib/config"
 import Term from "@/components/ui/term-tooltip"
 

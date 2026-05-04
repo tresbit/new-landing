@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Plug, Webhook, RefreshCw, Globe } from "lucide-react"
 import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
@@ -82,7 +82,7 @@ export default function IntegrationsPageContent() {
           <BGPattern variant="dots" mask="fade-center" style={{ "--background": "#0b1120" } as React.CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Integraciones" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -103,7 +103,7 @@ export default function IntegrationsPageContent() {
               <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
                 Construimos software que se conecta al ecosistema digital de tu empresa desde el primer día. Sin fricciones, sin silos, sin procesos manuales innecesarios.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -112,7 +112,7 @@ export default function IntegrationsPageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <motion.div
+                <m.div
                   key={pillar.title}
                   custom={i}
                   initial="hidden"
@@ -148,7 +148,7 @@ export default function IntegrationsPageContent() {
                       {pillar.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function IntegrationsPageContent() {
         {/* Connected systems strip */}
         <section className="bg-[#0d1728] py-20 border-b border-white/[0.07]">
           <div className="max-w-5xl mx-auto px-4 md:px-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -170,8 +170,8 @@ export default function IntegrationsPageContent() {
               <p className="text-slate-400 text-sm">
                 Y con cualquier plataforma que tenga una <Term term="API">API</Term> abierta o documentación.
               </p>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -189,14 +189,14 @@ export default function IntegrationsPageContent() {
               <span className="px-4 py-2 rounded-full text-sm font-medium border border-white/10 text-slate-400 bg-white/4">
                 + cualquier API REST o GraphQL
               </span>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -214,7 +214,7 @@ export default function IntegrationsPageContent() {
               >
                 Consultar sobre integraciones
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
       </main>

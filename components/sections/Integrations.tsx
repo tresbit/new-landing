@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Plug, Webhook, RefreshCw, Globe } from "lucide-react"
 import Term from "@/components/ui/term-tooltip"
 
@@ -87,7 +87,7 @@ export default function Integrations() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
           viewport={{ once: false, margin: "-80px" }}
@@ -108,7 +108,7 @@ export default function Integrations() {
             ecosistema digital donde los datos fluyen y los procesos se ejecutan
             sin fricción.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* 2×2 card grid — gap-px trick for separator lines */}
         <div
@@ -116,7 +116,7 @@ export default function Integrations() {
           style={{ background: "rgba(255,255,255,0.07)" }}
         >
           {blocks.map((block, i) => (
-            <motion.div
+            <m.div
               key={block.tag}
               custom={i}
               initial="hidden"
@@ -150,12 +150,12 @@ export default function Integrations() {
               <p className="text-slate-400 text-sm leading-relaxed">
                 {block.description}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* CTA */}
-            <motion.div
+            <m.div
                initial={{ opacity: 0 }}
                whileInView={{ opacity: 1 }}
                viewport={{ once: true }}
@@ -173,7 +173,7 @@ export default function Integrations() {
                <span className="px-4 py-2 rounded-full text-sm font-medium border border-white/10 text-slate-400 bg-white/4">
                  + <Term term="API" /> <Term term="REST" /> o <Term term="GraphQL" />
                </span>
-            </motion.div>
+            </m.div>
       </div>
     </section>
   )

@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import Link from "next/link"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
@@ -54,7 +54,7 @@ export default function AboutContent() {
         {/* Hero */}
         <section className="bg-[#0b1120] pt-40 pb-24 border-b border-white/[0.07]">
           <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -69,7 +69,7 @@ export default function AboutContent() {
               <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
                 Somos un equipo de Mendoza, Argentina. Desarrollamos sistemas a medida para empresas que necesitan tecnología que funcione de verdad, no soluciones genéricas de catálogo.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -77,7 +77,7 @@ export default function AboutContent() {
         <section className="bg-[#07090f] py-20 border-b border-white/[0.07]">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -93,8 +93,8 @@ export default function AboutContent() {
                 <p className="text-slate-400 leading-relaxed">
                   Trabajamos con empresas de distintos rubros — logística, retail, fintech, servicios — ayudándolas a resolver problemas concretos con tecnología moderna y equipos que entienden el contexto local.
                 </p>
-              </motion.div>
-              <motion.div
+              </m.div>
+              <m.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -127,7 +127,7 @@ export default function AboutContent() {
                   <span className="text-sm">{COMPANY_INFO.PHONE}</span>
                 </a>
                 <p className="text-slate-600 text-xs pt-2">Lun–Vie · 09:00–18:00 ART</p>
-              </motion.div>
+              </m.div>
             </div>
           </div>
         </section>
@@ -135,7 +135,7 @@ export default function AboutContent() {
         {/* Valores */}
         <section className="bg-[#0b1120] py-20 border-b border-white/[0.07]">
           <div className="max-w-5xl mx-auto px-4 md:px-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -148,10 +148,10 @@ export default function AboutContent() {
               <p className="text-slate-400 text-lg max-w-xl mx-auto">
                 Los principios que guían cada proyecto.
               </p>
-            </motion.div>
+            </m.div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {values.map((v, i) => (
-                <motion.div
+                <m.div
                   key={v.title}
                   custom={i}
                   initial="hidden"
@@ -168,7 +168,7 @@ export default function AboutContent() {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{v.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{v.description}</p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function AboutContent() {
         {/* CTA */}
         <section className="bg-[#0f1929] py-20">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -196,7 +196,7 @@ export default function AboutContent() {
               >
                 Hablar con el equipo
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 

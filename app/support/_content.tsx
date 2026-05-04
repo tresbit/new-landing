@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { RadioTower, Zap, Wrench, TrendingUp } from "lucide-react"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
@@ -78,7 +78,7 @@ export default function SupportPageContent() {
           <BGPattern variant="vertical-lines" mask="fade-bottom" style={{ "--background": "#0b1120" } as React.CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Soporte" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -99,7 +99,7 @@ export default function SupportPageContent() {
                 Acompañamos el sistema en producción con monitoreo, mantenimiento preventivo y
                 evolución continua. No lo lanzamos y desaparecemos.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -108,7 +108,7 @@ export default function SupportPageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <motion.div
+                <m.div
                   key={pillar.title}
                   custom={i}
                   initial="hidden"
@@ -144,7 +144,7 @@ export default function SupportPageContent() {
                       {pillar.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function SupportPageContent() {
         {/* Commitments strip */}
         <section className="bg-[#0d1020] py-20 border-b border-white/[0.07]">
           <div className="max-w-5xl mx-auto px-4 md:px-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -164,11 +164,11 @@ export default function SupportPageContent() {
                 Lo que incluye trabajar con nosotros a largo plazo
               </h2>
               <p className="text-slate-500 text-sm mt-2">Sin letra chica, sin sorpresas.</p>
-            </motion.div>
+            </m.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {commitments.map((item, i) => (
-                <motion.div
+                <m.div
                   key={item.label}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -181,7 +181,7 @@ export default function SupportPageContent() {
                     style={{ backgroundColor: i % 2 === 0 ? "#38bdf8" : "#5ba8d8" }}
                   />
                   <p className="text-slate-300 text-sm leading-snug">{item.label}</p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function SupportPageContent() {
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -208,7 +208,7 @@ export default function SupportPageContent() {
               >
                 Consultar sobre soporte
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
       </main>

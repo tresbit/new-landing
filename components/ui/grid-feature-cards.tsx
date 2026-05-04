@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import Link from "next/link"
-import React, { useEffect, useRef, useState } from "react"
+import React from "react"
 
 type FeatureType = {
   title: string
@@ -15,30 +15,35 @@ type FeatureCardProps = React.ComponentProps<"div"> & {
   feature: FeatureType
 }
 
-export function FeatureCard({ feature, className, ...props }: FeatureCardProps) {
-  const [mounted, setMounted] = useState(false)
-  const patternRef = useRef<number[][]>(genRandomPattern())
+function genPattern(seed: number): number[][] {
+  const r = (n: number) => {
+    const x = Math.sin(seed + n) * 10000
+    return x - Math.floor(x)
+  }
+  return Array.from({ length: 5 }, (_, i) => [
+    Math.floor(r(i * 2) * 4) + 7,
+    Math.floor(r(i * 2 + 1) * 6) + 1,
+  ])
+}
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+export function FeatureCard({ feature, className, ...props }: FeatureCardProps) {
+  const seed = feature.title.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0)
+  const pattern = genPattern(seed)
 
   const inner = (
     <div className={cn("relative overflow-hidden p-6 bg-[#0b1120] opacity-95 hover:bg-[#0d1728] transition-colors duration-200", feature.href && "cursor-pointer group", className)} {...props}>
-      {mounted && (
-        <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full mask-[linear-gradient(white,transparent)]">
-          <div className="from-foreground/5 to-foreground/1 absolute inset-0 bg-linear-to-r mask-[radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
-            <GridPattern
-              width={20}
-              height={20}
-              x="-12"
-              y="4"
-              squares={patternRef.current}
-              className="fill-foreground/5 stroke-foreground/25 absolute inset-0 h-full w-full mix-blend-overlay"
-            />
-          </div>
+      <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full mask-[linear-gradient(white,transparent)]">
+        <div className="from-foreground/5 to-foreground/1 absolute inset-0 bg-linear-to-r mask-[radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
+          <GridPattern
+            width={20}
+            height={20}
+            x="-12"
+            y="4"
+            squares={pattern}
+            className="fill-foreground/5 stroke-foreground/25 absolute inset-0 h-full w-full mix-blend-overlay"
+          />
         </div>
-      )}
+      </div>
       <feature.icon className="text-foreground/75 size-6" strokeWidth={1} aria-hidden />
       <h3 className="mt-10 text-base md:text-lg font-semibold text-foreground">{feature.title}</h3>
       <p className="text-muted-foreground relative z-20 mt-2 text-sm leading-relaxed">{feature.description}</p>

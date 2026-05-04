@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Rocket, RefreshCw, Target, GitMerge } from "lucide-react"
 import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
@@ -77,7 +77,7 @@ export default function SpeedPageContent() {
           <BGPattern variant="horizontal-lines" mask="fade-right" style={{ "--background": "#0b1120" } as React.CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Entrega Rápida" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -99,7 +99,7 @@ export default function SpeedPageContent() {
                 Optimizamos el tiempo entre idea y producto en producción sin atajos que
                 generen deuda técnica. Rápido, pero bien hecho.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -107,9 +107,9 @@ export default function SpeedPageContent() {
         <section className="bg-[#0d1728] py-12 border-b border-white/[0.07]">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-              {metrics.map((m, i) => (
-                <motion.div
-                  key={m.value}
+              {metrics.map((metric, i) => (
+                <m.div
+                  key={metric.value}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -120,10 +120,10 @@ export default function SpeedPageContent() {
                     className="font-heading text-4xl font-black tracking-tight mb-1"
                     style={{ color: "#fbbf24" }}
                   >
-                    {m.value}
+                    {metric.value}
                   </p>
-                  <p className="text-slate-500 text-sm">{m.label}</p>
-                </motion.div>
+                  <p className="text-slate-500 text-sm">{metric.label}</p>
+                </m.div>
               ))}
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function SpeedPageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <motion.div
+                <m.div
                   key={pillar.title}
                   custom={i}
                   initial="hidden"
@@ -170,7 +170,7 @@ export default function SpeedPageContent() {
                       {pillar.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function SpeedPageContent() {
         {/* How we work timeline */}
         <section className="bg-[#0d1020] py-20 border-b border-white/[0.07]">
           <div className="max-w-3xl mx-auto px-4 md:px-6">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -190,7 +190,7 @@ export default function SpeedPageContent() {
                 De la idea al producto en producción
               </h2>
               <p className="text-slate-500 text-sm mt-2">Un proceso claro, sin sorpresas.</p>
-            </motion.div>
+            </m.div>
 
             <div className="relative">
               {/* vertical line */}
@@ -203,7 +203,7 @@ export default function SpeedPageContent() {
                   { step: "03", title: "Iteraciones semanales", desc: "Cada semana entregamos mejoras. Vos decidís qué sigue según lo que aprendiste." },
                   { step: "04", title: "Deploy a producción", desc: "Pipeline automatizado. Cero pasos manuales, cero riesgo de errores humanos en el lanzamiento." },
                 ].map((item, i) => (
-                  <motion.div
+                  <m.div
                     key={item.step}
                     initial={{ opacity: 0, x: -16 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -221,7 +221,7 @@ export default function SpeedPageContent() {
                       <h4 className="text-white font-semibold mb-1">{item.title}</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
             </div>
@@ -231,7 +231,7 @@ export default function SpeedPageContent() {
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -249,7 +249,7 @@ export default function SpeedPageContent() {
               >
                 Hablar sobre tu MVP
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
       </main>

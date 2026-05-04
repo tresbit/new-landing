@@ -2,7 +2,7 @@
 
 import { SECTION_IDS, ANIMATION_CONFIG } from "@/lib/config"
 import { FeatureCard } from "@/components/ui/grid-feature-cards"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Activity, Brain, Layers, Link, Rocket, ShieldCheck } from "lucide-react"
 import FloatingPathsBackground from "@/components/ui/floating-paths-background"
 import Term from "@/components/ui/term-tooltip"
@@ -50,7 +50,7 @@ export default function Security() {
     <section id={SECTION_IDS.SECURITY} className="dark relative bg-[#0b1120] py-20 overflow-hidden border-t border-white/[0.07]">
       <FloatingPathsBackground globalOpacity={ANIMATION_CONFIG.OPACITY} />
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
           viewport={{ once: false, margin: "-80px" }}
@@ -63,9 +63,9 @@ export default function Security() {
           <p className="text-slate-300 text-xl leading-relaxed">
             Diseñamos sistemas preparados para crecer, resistir y operar sin comprometer la información ni el rendimiento.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-60px" }}
@@ -75,7 +75,7 @@ export default function Security() {
           {features.map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
           ))}
-        </motion.div>
+        </m.div>
 
         <div className="text-center">
           <a

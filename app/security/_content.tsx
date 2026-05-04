@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { ShieldCheck, KeyRound, Lock, Activity } from "lucide-react"
 import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
@@ -71,7 +71,7 @@ export default function SecurityPageContent() {
           <BGPattern variant="diagonal-stripes" mask="fade-y" style={{ "--background": "#0b1120" } as React.CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Seguridad" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -91,7 +91,7 @@ export default function SecurityPageContent() {
                 Cada sistema que construimos incorpora prácticas de seguridad desde el primer <Term term="Commit">commit</Term>,
                 no como parche final sino como decisión de arquitectura.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -100,7 +100,7 @@ export default function SecurityPageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <motion.div
+                <m.div
                   key={pillar.title}
                   custom={i}
                   initial="hidden"
@@ -133,7 +133,7 @@ export default function SecurityPageContent() {
                       {pillar.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function SecurityPageContent() {
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -160,7 +160,7 @@ export default function SecurityPageContent() {
               >
                 Consultar sobre seguridad
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
       </main>

@@ -1,7 +1,7 @@
 "use client";
 
 import ComponentFileViewer, { type ApiComponent } from "@/components/ui/file-viewer";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Term from "@/components/ui/term-tooltip";
 
 const TRESBIT_STACK: ApiComponent = {
@@ -268,7 +268,7 @@ export default function Showcase() {
   return (
     <section className="dark bg-[#0f1929] py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
@@ -286,16 +286,16 @@ export default function Showcase() {
             Código limpio, arquitectura escalable y <Term term="SEO" /> desde el primer <Term term="Commit">commit</Term>. Explorá
             cómo estructuramos proyectos reales.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <ComponentFileViewer component={TRESBIT_STACK} />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );
