@@ -1,194 +1,138 @@
 "use client"
 
-import { useState, useRef } from "react"
+import Script from "next/script"
 import dynamic from "next/dynamic"
+import { useEffect, useRef } from "react"
 import { COMPANY_INFO, SECTION_IDS } from "@/lib/config"
-import { Button } from "@/components/ui/button"
-import { ContactCard } from "@/components/ui/contact-card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, PlusIcon } from "lucide-react"
 
 const DottedSurface = dynamic(
   () => import("@/components/ui/dotted-surface").then((m) => m.DottedSurface),
   { ssr: false },
 )
 
-type FormState = "idle" | "sending" | "success" | "error"
-
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(COMPANY_INFO.ADDRESS)}`
 const SANITIZED_PHONE = COMPANY_INFO.PHONE.replace(/[^\d+]/g, "")
+const CALENDLY_URL =
+  "https://calendly.com/tresbitsoft/30min?background_color=0b1120&text_color=f8fafc&primary_color=286291&hide_gdpr_banner=1"
 
 export default function Contact() {
-  const [state, setState] = useState<FormState>("idle")
-  const [errorMsg, setErrorMsg] = useState("")
-  const formRef = useRef<HTMLFormElement>(null)
+  const widgetRef = useRef<HTMLDivElement>(null)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setState("sending")
-    setErrorMsg("")
-
-    const data = Object.fromEntries(new FormData(e.currentTarget))
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}))
-        throw new Error(body?.message || "Error al enviar")
-      }
-
-      setState("success")
-      formRef.current?.reset()
-    } catch (err) {
-      setState("error")
-      setErrorMsg(err instanceof Error ? err.message : "Error desconocido")
-    }
-  }
+  useEffect(() => {
+    if (!widgetRef.current) return
+    // Guard: skip if Calendly already auto-initialized from data-url (iframe present)
+    if (widgetRef.current.querySelector("iframe")) return
+    // Only reaches here on SPA back-navigation (script loaded, new div mounted, no iframe yet)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ;(window as any).Calendly?.initInlineWidget({
+      url: CALENDLY_URL,
+      parentElement: widgetRef.current,
+    })
+  }, [])
 
   return (
-    <section id={SECTION_IDS.CONTACT} className="dark relative bg-[#0b1120] text-white py-20 overflow-hidden border-t border-white/[0.07]">
+    <section
+      id={SECTION_IDS.CONTACT}
+      className="dark relative bg-[#0b1120] text-white py-20 overflow-hidden border-t border-white/[0.07]"
+    >
       <DottedSurface className="absolute inset-0 opacity-60" />
+
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
-        <ContactCard
-          title="Hablemos de tu próximo sistema"
-          description="Contanos qué estás buscando y evaluamos juntos la mejor forma de resolverlo. Sin vueltas, sin propuestas genéricas."
-          contactInfo={[
-            {
-              icon: Phone,
-              label: "Telefono",
-              value: (
-                <a
-                  href={`https://wa.me/${SANITIZED_PHONE}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#5ba8d8] transition-colors"
-                >
-                  {COMPANY_INFO.PHONE}
-                </a>
-              ),
-            },
-            {
-              icon: Mail,
-              label: "Email",
-              value: (
-                <a href={`mailto:${COMPANY_INFO.EMAIL}`} className="hover:text-[#5ba8d8] transition-colors">
-                  {COMPANY_INFO.EMAIL}
-                </a>
-              ),
-            },
-            {
-              icon: MapPin,
-              label: "Direccion",
-              value: (
-                <a
-                  href={MAPS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#5ba8d8] transition-colors"
-                >
-                  {COMPANY_INFO.ADDRESS}
-                </a>
-              ),
-            },
-          ]}
-          className="bg-transparent border-white/10"
-          formSectionClassName="bg-[#0b1120]/60 border-white/10"
-        >
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            noValidate
-            className="w-full space-y-4"
-            aria-label="Formulario de contacto"
-          >
-            <div className="grid grid-cols-1 gap-4">
-              <div className="flex flex-col gap-1.5">
-                <Label htmlFor="name">
-                  Nombre <span aria-hidden="true" className="text-red-400">*</span>
-                </Label>
-                <Input id="name" name="name" type="text" required placeholder="Tu nombre" aria-label="Nombre completo" aria-required="true" />
+        <div className="relative border border-white/10">
+          <PlusIcon className="absolute -top-3 -left-3 h-6 w-6 text-white/30" aria-hidden="true" />
+          <PlusIcon className="absolute -top-3 -right-3 h-6 w-6 text-white/30" aria-hidden="true" />
+          <PlusIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-white/30" aria-hidden="true" />
+          <PlusIcon className="absolute -right-3 -bottom-3 h-6 w-6 text-white/30" aria-hidden="true" />
+
+          {/* Header */}
+          <div className="px-6 md:px-10 pt-10 pb-6 text-center">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
+              Hablemos de tu próximo sistema
+            </h2>
+            <p className="text-slate-400 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+              Elegí un horario y coordinamos una reunión de 30 minutos. Sin formularios, sin esperas.
+            </p>
+          </div>
+
+          {/* Calendly inline widget */}
+          <div className="px-4 md:px-8 pb-2">
+            <div
+              ref={widgetRef}
+              className="calendly-inline-widget w-full"
+              data-url={CALENDLY_URL}
+              data-auto-height="true"
+              style={{ minWidth: "320px", height: "700px" }}
+              aria-label="Calendario para agendar una reunión con Tresbit"
+              role="region"
+            />
+            <Script
+              src="https://assets.calendly.com/assets/external/widget.js"
+              strategy="afterInteractive"
+            />
+          </div>
+
+          {/* Contact info strip */}
+          <div className="border-t border-white/[0.07] px-6 md:px-10 py-7">
+            <dl className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-center gap-6 sm:gap-10">
+              <div className="flex items-center gap-3">
+                <div className="shrink-0 p-2.5 rounded-lg bg-white/5 border border-white/10">
+                  <Phone className="h-4 w-4 text-[#5ba8d8]" aria-hidden="true" />
+                </div>
+                <div className="min-w-0">
+                  <dt className="text-xs text-slate-500 uppercase tracking-widest font-medium mb-0.5">Teléfono</dt>
+                  <dd>
+                    <a
+                      href={`https://wa.me/${SANITIZED_PHONE}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-slate-300 hover:text-[#5ba8d8] transition-colors duration-150"
+                    >
+                      {COMPANY_INFO.PHONE}
+                    </a>
+                  </dd>
+                </div>
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <Label htmlFor="email">
-                  Email <span aria-hidden="true" className="text-red-400">*</span>
-                </Label>
-                <Input id="email" name="email" type="email" required placeholder="tu@email.com" aria-label="Dirección de email" aria-required="true" />
+              <div className="flex items-center gap-3">
+                <div className="shrink-0 p-2.5 rounded-lg bg-white/5 border border-white/10">
+                  <Mail className="h-4 w-4 text-[#5ba8d8]" aria-hidden="true" />
+                </div>
+                <div className="min-w-0">
+                  <dt className="text-xs text-slate-500 uppercase tracking-widest font-medium mb-0.5">Email</dt>
+                  <dd>
+                    <a
+                      href={`mailto:${COMPANY_INFO.EMAIL}`}
+                      className="text-sm text-slate-300 hover:text-[#5ba8d8] transition-colors duration-150"
+                    >
+                      {COMPANY_INFO.EMAIL}
+                    </a>
+                  </dd>
+                </div>
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <Label htmlFor="phone">
-                  Telefono <span className="text-muted-foreground text-xs">(opcional)</span>
-                </Label>
-                <Input id="phone" name="phone" type="tel" placeholder="+54 9 261 000 0000" aria-label="Número de teléfono (opcional)" />
+              <div className="flex items-center gap-3">
+                <div className="shrink-0 p-2.5 rounded-lg bg-white/5 border border-white/10">
+                  <MapPin className="h-4 w-4 text-[#5ba8d8]" aria-hidden="true" />
+                </div>
+                <div className="min-w-0">
+                  <dt className="text-xs text-slate-500 uppercase tracking-widest font-medium mb-0.5">Dirección</dt>
+                  <dd>
+                    <a
+                      href={MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-slate-300 hover:text-[#5ba8d8] transition-colors duration-150"
+                    >
+                      {COMPANY_INFO.ADDRESS}
+                    </a>
+                  </dd>
+                </div>
               </div>
-
-              <div className="flex flex-col gap-1.5">
-                <Label htmlFor="subject">
-                  Asunto <span aria-hidden="true" className="text-red-400">*</span>
-                </Label>
-                <select
-                  id="subject"
-                  name="subject"
-                  required
-                  defaultValue=""
-                  aria-label="Asunto del mensaje"
-                  aria-required="true"
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <option value="" disabled>Selecciona un asunto</option>
-                  <option value="consulta">Consulta general</option>
-                  <option value="presupuesto">Solicitud de presupuesto</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <Label htmlFor="message">
-                  Mensaje <span aria-hidden="true" className="text-red-400">*</span>
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  placeholder="Contanos qué necesitás resolver"
-                  className="resize-none"
-                  aria-label="Mensaje"
-                  aria-required="true"
-                />
-              </div>
-            </div>
-
-            {state === "error" && (
-              <p role="alert" className="text-red-400 text-sm">
-                {errorMsg || "Hubo un problema. Intentalo nuevamente."}
-              </p>
-            )}
-            {state === "success" && (
-              <p role="status" className="text-green-400 text-sm font-medium">
-                Mensaje enviado. Te respondemos en breve.
-              </p>
-            )}
-
-            <Button
-              type="submit"
-              disabled={state === "sending"}
-              className="w-full bg-[#286291] hover:bg-[#286291]/90 text-white font-semibold transition-all duration-200 disabled:opacity-60"
-            >
-              {state === "sending" ? "Enviando..." : "Enviar consulta"}
-            </Button>
-          </form>
-        </ContactCard>
+            </dl>
+          </div>
+        </div>
       </div>
     </section>
   )
 }
-

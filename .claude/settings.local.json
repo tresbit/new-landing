@@ -11,7 +11,9 @@
       "Bash(npm run *)",
       "Bash(Select-Object Name, PSIsContainer)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\DarthKenar\\\\Desktop\\\\3it\\\\REPOS\\\\new-landing\" -Recurse -Depth 2)",
-      "Bash(Select-Object -Property Name, FullName)"
+      "Bash(Select-Object -Property Name, FullName)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(del \"c:\\\\Users\\\\DarthKenar\\\\Desktop\\\\3it\\\\REPOS\\\\new-landing\\\\app\\\\api\\\\contact\\\\route.ts\")"
     ]
   }
 }

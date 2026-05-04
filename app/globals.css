@@ -164,6 +164,70 @@
   overflow: hidden;
 }
 
+/* ─── Calendly badge — hide on mobile ──────────────────────────────── */
+@media (max-width: 767px) {
+  .calendly-badge-widget {
+    display: none !important;
+  }
+}
+/* ──────────────────────────────────────────────────────────────────── */
+
+/* ─── Scrollbar — brand dark theme ─────────────────────────────────── */
+:root {
+  --sb-track: #07090f;
+  --sb-thumb: #286291;
+  --sb-thumb-hover: #5ba8d8;
+  --sb-size: 6px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
+}
+
+::-webkit-scrollbar {
+  width: var(--sb-size);
+  height: var(--sb-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sb-track);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-thumb-hover);
+}
+
+/* Calendly inline widget container */
+.calendly-inline-widget {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
+}
+
+.calendly-inline-widget::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.calendly-inline-widget::-webkit-scrollbar-track {
+  background: var(--sb-track);
+}
+
+.calendly-inline-widget::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb);
+  border-radius: 999px;
+}
+
+.calendly-inline-widget::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-thumb-hover);
+}
+/* ──────────────────────────────────────────────────────────────────── */
+
 .btn-shimmer::after {
   content: '';
   position: absolute;

@@ -1,14 +1,13 @@
-"use client"
-
-import { m } from "framer-motion"
+import type { CSSProperties } from "react"
 import { Rocket, RefreshCw, Target, GitMerge } from "lucide-react"
 import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 import { BGPattern } from "@/components/ui/bg-pattern"
-import { SECTION_IDS } from "@/lib/config"
-import Link from "next/link"
 import Breadcrumb from "@/components/ui/breadcrumb"
+import { CalendlyPopupButton } from "@/components/ui/calendly-popup-button"
+import { AnimatedEntry } from "@/components/ui/animated-entry"
+import { AnimatedSection } from "@/components/ui/animated-section"
 
 const pillars = [
   {
@@ -50,16 +49,6 @@ const pillars = [
   },
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28, filter: "blur(6px)" },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.55, ease: "easeOut" as const, delay: i * 0.1 },
-  }),
-}
-
 const metrics = [
   { value: "4–6 sem", label: (<>de <Term term="MVP" /> funcional a producción</>) },
   { value: "100%", label: (<>de entregas con <Term term="CI/CD" /> automatizado</>) },
@@ -74,14 +63,10 @@ export default function SpeedPageContent() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden bg-[#0b1120] pt-40 pb-28 border-b border-white/[0.07]">
-          <BGPattern variant="horizontal-lines" mask="fade-right" style={{ "--background": "#0b1120" } as React.CSSProperties} />
+          <BGPattern variant="horizontal-lines" mask="fade-right" style={{ "--background": "#0b1120" } as CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Entrega Rápida" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <AnimatedEntry>
               <span className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-yellow-400/40 text-yellow-400 bg-yellow-400/8">
                 Time to Market
               </span>
@@ -99,7 +84,7 @@ export default function SpeedPageContent() {
                 Optimizamos el tiempo entre idea y producto en producción sin atajos que
                 generen deuda técnica. Rápido, pero bien hecho.
               </p>
-            </m.div>
+            </AnimatedEntry>
           </div>
         </section>
 
@@ -108,22 +93,17 @@ export default function SpeedPageContent() {
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
               {metrics.map((metric, i) => (
-                <m.div
+                <AnimatedSection
                   key={metric.value}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  y={12}
+                  delay={i * 0.1}
                   className="text-center py-8 px-6"
                 >
-                  <p
-                    className="font-heading text-4xl font-black tracking-tight mb-1"
-                    style={{ color: "#fbbf24" }}
-                  >
+                  <p className="font-heading text-4xl font-black tracking-tight mb-1" style={{ color: "#fbbf24" }}>
                     {metric.value}
                   </p>
                   <p className="text-slate-500 text-sm">{metric.label}</p>
-                </m.div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -134,13 +114,12 @@ export default function SpeedPageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <m.div
+                <AnimatedSection
                   key={pillar.title}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
-                  variants={fadeUp}
+                  delay={i * 0.1}
+                  y={28}
+                  blur
+                  margin="-60px"
                   className="relative bg-[#0b1120] p-8 md:p-10 group hover:bg-[#0d1728] transition-colors duration-200 overflow-hidden"
                 >
                   <div
@@ -151,26 +130,15 @@ export default function SpeedPageContent() {
                       className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 border border-white/10"
                       style={{ backgroundColor: `${pillar.iconColor}18` }}
                     >
-                      <pillar.icon
-                        className="w-5 h-5"
-                        strokeWidth={1.5}
-                        style={{ color: pillar.iconColor }}
-                      />
+                      <pillar.icon className="w-5 h-5" strokeWidth={1.5} style={{ color: pillar.iconColor }} />
                     </div>
-                    <p
-                      className="text-xs font-semibold uppercase tracking-widest mb-1"
-                      style={{ color: pillar.iconColor }}
-                    >
+                    <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: pillar.iconColor }}>
                       {pillar.subtitle}
                     </p>
-                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      {pillar.description}
-                    </p>
+                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{pillar.description}</p>
                   </div>
-                </m.div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -179,23 +147,15 @@ export default function SpeedPageContent() {
         {/* How we work timeline */}
         <section className="bg-[#0d1020] py-20 border-b border-white/[0.07]">
           <div className="max-w-3xl mx-auto px-4 md:px-6">
-            <m.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-12"
-            >
+            <AnimatedSection y={16} className="text-center mb-12">
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">
                 De la idea al producto en producción
               </h2>
               <p className="text-slate-500 text-sm mt-2">Un proceso claro, sin sorpresas.</p>
-            </m.div>
+            </AnimatedSection>
 
             <div className="relative">
-              {/* vertical line */}
               <div className="absolute left-5 top-2 bottom-2 w-px bg-white/10 hidden sm:block" />
-
               <div className="space-y-8">
                 {[
                   { step: "01", title: "Kickoff y definición", desc: "Entendemos el problema, definimos el alcance del MVP y acordamos prioridades. Sin ambigüedades." },
@@ -203,12 +163,11 @@ export default function SpeedPageContent() {
                   { step: "03", title: "Iteraciones semanales", desc: "Cada semana entregamos mejoras. Vos decidís qué sigue según lo que aprendiste." },
                   { step: "04", title: "Deploy a producción", desc: "Pipeline automatizado. Cero pasos manuales, cero riesgo de errores humanos en el lanzamiento." },
                 ].map((item, i) => (
-                  <m.div
+                  <AnimatedSection
                     key={item.step}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    y={0}
+                    x={-16}
+                    delay={i * 0.1}
                     className="flex gap-6 items-start"
                   >
                     <div
@@ -221,7 +180,7 @@ export default function SpeedPageContent() {
                       <h4 className="text-white font-semibold mb-1">{item.title}</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                     </div>
-                  </m.div>
+                  </AnimatedSection>
                 ))}
               </div>
             </div>
@@ -231,25 +190,19 @@ export default function SpeedPageContent() {
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <AnimatedSection y={20}>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent tracking-tight">
                 ¿Cuánto hace que tu proyecto está esperando?
               </h2>
               <p className="text-slate-400 text-lg mb-8 leading-relaxed">
                 Contanos qué querés construir. En 48 horas te decimos cómo arrancamos.
               </p>
-              <Link
-                href={`/#${SECTION_IDS.CONTACT}`}
+              <CalendlyPopupButton
                 className="btn-shimmer inline-block px-8 py-4 bg-yellow-400 text-[#07090f] font-semibold rounded-xl shadow-[0_0_24px_rgba(251,191,36,0.4)] hover:shadow-[0_0_40px_rgba(251,191,36,0.6)] hover:bg-yellow-300 hover:-translate-y-0.5 transition-all duration-200"
               >
                 Hablar sobre tu MVP
-              </Link>
-            </m.div>
+              </CalendlyPopupButton>
+            </AnimatedSection>
           </div>
         </section>
       </main>

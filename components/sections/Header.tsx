@@ -12,6 +12,15 @@ const navItems = [
   { href: `/#${SECTION_IDS.CONTACT}`, text: "Contacto" },
 ]
 
+function scrollToHash(href: string) {
+  const hash = href.replace(/^.*#/, "")
+  const el = document.getElementById(hash)
+  if (!el) return false
+  const top = el.getBoundingClientRect().top + window.scrollY - 80
+  window.scrollTo({ top, behavior: "smooth" })
+  return true
+}
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -53,6 +62,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={(e) => { if (scrollToHash(item.href)) e.preventDefault() }}
               className="text-white/90 hover:text-white text-sm font-medium transition-colors duration-200"
             >
               {item.text}
@@ -60,6 +70,7 @@ export default function Header() {
           ))}
           <Link
             href={`/#${SECTION_IDS.CONTACT}`}
+            onClick={(e) => { if (scrollToHash(`#${SECTION_IDS.CONTACT}`)) e.preventDefault() }}
             className="ml-2 px-4 py-2 rounded-lg border-2 border-white text-white text-sm font-semibold hover:bg-white hover:text-[#286291] transition-all duration-200"
           >
             Contacto
@@ -107,7 +118,10 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setMenuOpen(false)}
+              onClick={(e) => {
+                setMenuOpen(false)
+                if (scrollToHash(item.href)) e.preventDefault()
+              }}
               className="py-3 text-white/90 hover:text-white text-sm font-medium border-b border-white/10 last:border-0 transition-colors"
             >
               {item.text}

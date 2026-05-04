@@ -1,14 +1,13 @@
-"use client"
-
-import { m } from "framer-motion"
+import type { CSSProperties } from "react"
 import { Plug, Webhook, RefreshCw, Globe } from "lucide-react"
 import Term from "@/components/ui/term-tooltip"
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 import { BGPattern } from "@/components/ui/bg-pattern"
-import { SECTION_IDS } from "@/lib/config"
-import Link from "next/link"
 import Breadcrumb from "@/components/ui/breadcrumb"
+import { CalendlyPopupButton } from "@/components/ui/calendly-popup-button"
+import { AnimatedEntry } from "@/components/ui/animated-entry"
+import { AnimatedSection } from "@/components/ui/animated-section"
 
 const pillars = [
   {
@@ -61,16 +60,6 @@ const connectedItems = [
   "AWS / GCP / Azure",
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28, filter: "blur(6px)" },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.55, ease: "easeOut" as const, delay: i * 0.1 },
-  }),
-}
-
 export default function IntegrationsPageContent() {
   return (
     <div className="min-h-screen bg-[#07090f] text-white">
@@ -79,14 +68,10 @@ export default function IntegrationsPageContent() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden bg-[#0b1120] pt-40 pb-28 border-b border-white/[0.07]">
-          <BGPattern variant="dots" mask="fade-center" style={{ "--background": "#0b1120" } as React.CSSProperties} />
+          <BGPattern variant="dots" mask="fade-center" style={{ "--background": "#0b1120" } as CSSProperties} />
           <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Integraciones" }]} />
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <AnimatedEntry>
               <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-widest border border-orange-500/40 text-orange-400 bg-orange-500/8">
                 <span className="size-1.5 rounded-full bg-orange-400 animate-pulse" />
                 Integraciones
@@ -103,7 +88,7 @@ export default function IntegrationsPageContent() {
               <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
                 Construimos software que se conecta al ecosistema digital de tu empresa desde el primer día. Sin fricciones, sin silos, sin procesos manuales innecesarios.
               </p>
-            </m.div>
+            </AnimatedEntry>
           </div>
         </section>
 
@@ -112,13 +97,12 @@ export default function IntegrationsPageContent() {
           <div className="max-w-5xl mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/8 border border-white/8 rounded-2xl overflow-hidden">
               {pillars.map((pillar, i) => (
-                <m.div
+                <AnimatedSection
                   key={pillar.title}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
-                  variants={fadeUp}
+                  delay={i * 0.1}
+                  y={28}
+                  blur
+                  margin="-60px"
                   className="relative bg-[#0b1120] p-8 md:p-10 group hover:bg-[#0d1728] transition-colors duration-200 overflow-hidden"
                 >
                   <div
@@ -129,26 +113,15 @@ export default function IntegrationsPageContent() {
                       className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 border border-white/10"
                       style={{ backgroundColor: `${pillar.iconColor}18` }}
                     >
-                      <pillar.icon
-                        className="w-5 h-5"
-                        strokeWidth={1.5}
-                        style={{ color: pillar.iconColor }}
-                      />
+                      <pillar.icon className="w-5 h-5" strokeWidth={1.5} style={{ color: pillar.iconColor }} />
                     </div>
-                    <p
-                      className="text-xs font-semibold uppercase tracking-widest mb-1"
-                      style={{ color: pillar.iconColor }}
-                    >
+                    <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: pillar.iconColor }}>
                       {pillar.subtitle}
                     </p>
-                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      {pillar.description}
-                    </p>
+                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{pillar.description}</p>
                   </div>
-                </m.div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -157,27 +130,15 @@ export default function IntegrationsPageContent() {
         {/* Connected systems strip */}
         <section className="bg-[#0d1728] py-20 border-b border-white/[0.07]">
           <div className="max-w-5xl mx-auto px-4 md:px-6">
-            <m.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-10"
-            >
+            <AnimatedSection y={16} className="text-center mb-10">
               <h2 className="text-xl font-semibold text-white mb-2">
                 Nos conectamos con lo que ya usás
               </h2>
               <p className="text-slate-400 text-sm">
                 Y con cualquier plataforma que tenga una <Term term="API">API</Term> abierta o documentación.
               </p>
-            </m.div>
-            <m.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex flex-wrap gap-3 justify-center"
-            >
+            </AnimatedSection>
+            <AnimatedSection y={0} delay={0.1} className="flex flex-wrap gap-3 justify-center">
               {connectedItems.map((item) => (
                 <span
                   key={item}
@@ -189,32 +150,26 @@ export default function IntegrationsPageContent() {
               <span className="px-4 py-2 rounded-full text-sm font-medium border border-white/10 text-slate-400 bg-white/4">
                 + cualquier API REST o GraphQL
               </span>
-            </m.div>
+            </AnimatedSection>
           </div>
         </section>
 
         {/* Bottom CTA */}
         <section className="bg-[#0f1929] py-24">
           <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <AnimatedSection y={20}>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent tracking-tight">
                 ¿Tu operación tiene herramientas desconectadas?
               </h2>
               <p className="text-slate-400 text-lg mb-8 leading-relaxed">
                 Contanos cómo trabaja tu empresa hoy y diseñamos juntos un ecosistema integrado que elimine la fricción operativa.
               </p>
-              <Link
-                href={`/#${SECTION_IDS.CONTACT}`}
+              <CalendlyPopupButton
                 className="btn-shimmer inline-block px-8 py-4 bg-orange-500 text-white font-semibold rounded-xl shadow-[0_0_24px_rgba(249,115,22,0.35)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)] hover:bg-orange-400 hover:-translate-y-0.5 transition-all duration-200"
               >
                 Consultar sobre integraciones
-              </Link>
-            </m.div>
+              </CalendlyPopupButton>
+            </AnimatedSection>
           </div>
         </section>
       </main>
