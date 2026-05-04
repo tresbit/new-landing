@@ -1,5 +1,4 @@
 import { SECTION_IDS } from "@/lib/config"
-import Image from "next/image"
 
 const partners = [
   { name: "AWS", src: "https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg", href: "https://aws.amazon.com" },
