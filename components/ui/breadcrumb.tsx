@@ -8,7 +8,7 @@ interface BreadcrumbItem {
 
 export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 pt-6 pb-0">
+    <nav aria-label="Breadcrumb" className="absolute top-20 left-0 right-0 z-10 px-4 md:px-6">
       <ol className="flex items-center gap-1.5 text-xs text-slate-500" itemScope itemType="https://schema.org/BreadcrumbList">
         {items.map((item, i) => (
           <li
