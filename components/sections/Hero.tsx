@@ -52,8 +52,8 @@ export default function HeroSection() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 bg-linear-to-b from-white to-slate-300/80 bg-clip-text text-transparent">
-              Transformamos la{" "}
-              <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>tecnología</span>{" "}en resultados concretos para tu negocio
+              Software a medida en{" "}
+              <span style={{ WebkitTextFillColor: '#5ba8d8', color: '#5ba8d8' }}>Mendoza</span>{" "}que convierte tu idea en un sistema real
             </h1>
             <m.p
               initial={{ opacity: 0 }}
@@ -61,7 +61,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5, duration: 1 }}
               className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-xl mb-10"
             >
-              Transformamos ideas en sistemas que resuelven problemas reales y acompañan el crecimiento concreto de tu empresa.
+              Somos una empresa de desarrollo de software en Mendoza. Construimos sistemas web y mobile a medida que resuelven problemas reales y acompañan el crecimiento de tu negocio.
             </m.p>
 
             <m.div
@@ -98,7 +98,7 @@ export default function HeroSection() {
           >
             <Image
               src="/aplicacion-movil-software-a-medida.webp"
-              alt="App móvil demostrativa Tresbit"
+              alt="Aplicación mobile a medida desarrollada por Tresbit Mendoza"
               width={400}
               height={800}
               priority
