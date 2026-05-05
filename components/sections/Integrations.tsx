@@ -95,7 +95,7 @@ export default function Integrations() {
           className="text-center mb-14 max-w-2xl mx-auto"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium border border-emerald-500/30 text-emerald-400/90 bg-emerald-500/5 mb-6">
-            <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="size-1.5 rounded-full bg-emerald-400 motion-safe:animate-pulse" />
             Ecosistema conectado
           </span>
 

@@ -72,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`h-full antialiased ${plusJakartaSans.variable} ${interTight.variable}`}>
+    <html lang="es" data-scroll-behavior="smooth" className={`h-full antialiased ${plusJakartaSans.variable} ${interTight.variable}`}>
       <body className="min-h-full flex flex-col">
         <a
           href="#main-content"

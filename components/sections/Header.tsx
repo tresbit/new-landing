@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { SECTION_IDS } from "@/lib/config"
 import { cn } from "@/lib/utils"
@@ -34,15 +35,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center" aria-label="Tresbit - inicio">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/isotipo_black.svg"
             alt="Tresbit"
             width={96}
             height={36}
-            fetchPriority="high"
             loading="eager"
-            style={{ width: 96, height: 36 }}
+            fetchPriority="high"
+            unoptimized
           />
           <span className="sr-only">Tresbit – inicio</span>
         </Link>

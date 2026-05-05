@@ -32,10 +32,10 @@ export function ContactCard({
       )}
       {...props}
     >
-      <PlusIcon className="absolute -top-3 -left-3 h-6 w-6" />
-      <PlusIcon className="absolute -top-3 -right-3 h-6 w-6" />
-      <PlusIcon className="absolute -bottom-3 -left-3 h-6 w-6" />
-      <PlusIcon className="absolute -right-3 -bottom-3 h-6 w-6" />
+      <PlusIcon aria-hidden="true" className="absolute -top-3 -left-3 h-6 w-6" />
+      <PlusIcon aria-hidden="true" className="absolute -top-3 -right-3 h-6 w-6" />
+      <PlusIcon aria-hidden="true" className="absolute -bottom-3 -left-3 h-6 w-6" />
+      <PlusIcon aria-hidden="true" className="absolute -right-3 -bottom-3 h-6 w-6" />
       <div className="flex flex-col justify-between lg:col-span-2">
         <div className="relative h-full space-y-4 px-4 py-8 md:p-8">
           <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
@@ -67,12 +67,12 @@ function ContactInfo({ icon: Icon, label, value, className, ...props }: ContactI
   return (
     <div className={cn("flex items-center gap-3 py-3", className)} {...props}>
       <div className="bg-muted/40 rounded-lg p-3">
-        <Icon className="h-5 w-5" />
+        <Icon className="h-5 w-5" aria-hidden="true" />
       </div>
-      <div>
-        <p className="font-medium">{label}</p>
-        <p className="text-muted-foreground text-xs">{value}</p>
-      </div>
+      <dl className="m-0">
+        <dt className="font-medium text-sm">{label}</dt>
+        <dd className="text-muted-foreground text-xs m-0">{value}</dd>
+      </dl>
     </div>
   )
 }

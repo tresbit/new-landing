@@ -224,7 +224,7 @@ export function FocusRail({
             <div className="flex items-center gap-1 rounded-full bg-neutral-900/80 p-1 ring-1 ring-white/10 backdrop-blur-md">
               <button
                 onClick={handlePrev}
-                className="cursor-pointer rounded-full p-3 text-neutral-400 transition hover:bg-white/10 hover:text-white active:scale-95"
+                className="cursor-pointer rounded-full p-3 text-neutral-400 transition hover:bg-white/10 hover:text-white active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
                 aria-label="Anterior"
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -234,7 +234,7 @@ export function FocusRail({
               </span>
               <button
                 onClick={handleNext}
-                className="cursor-pointer rounded-full p-3 text-neutral-400 transition hover:bg-white/10 hover:text-white active:scale-95"
+                className="cursor-pointer rounded-full p-3 text-neutral-400 transition hover:bg-white/10 hover:text-white active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
                 aria-label="Siguiente"
               >
                 <ChevronRight className="h-5 w-5" />

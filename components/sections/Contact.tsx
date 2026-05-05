@@ -2,13 +2,14 @@
 
 import { useState, useRef } from "react"
 import dynamic from "next/dynamic"
+import Link from "next/link"
 import { COMPANY_INFO, SECTION_IDS } from "@/lib/config"
 import { Button } from "@/components/ui/button"
 import { ContactCard } from "@/components/ui/contact-card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, CalendarDays } from "lucide-react"
 
 const DottedSurface = dynamic(
   () => import("@/components/ui/dotted-surface").then((m) => m.DottedSurface),
@@ -185,6 +186,20 @@ export default function Contact() {
             >
               {state === "sending" ? "Enviando..." : "Enviar consulta"}
             </Button>
+
+            <div className="relative flex items-center gap-3 pt-1">
+              <div className="h-px flex-1 bg-white/[0.08]" />
+              <span className="text-xs text-slate-600">o</span>
+              <div className="h-px flex-1 bg-white/[0.08]" />
+            </div>
+
+            <Link
+              href="/contact"
+              className="flex items-center justify-center gap-2 w-full h-10 rounded-lg border border-white/10 text-sm font-medium text-slate-300 hover:text-white hover:border-white/25 transition-colors duration-200"
+            >
+              <CalendarDays size={15} aria-hidden="true" />
+              Agendá una reunión
+            </Link>
           </form>
         </ContactCard>
       </div>

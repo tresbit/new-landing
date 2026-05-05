@@ -252,7 +252,7 @@ export const CircularTestimonials = ({
               onMouseEnter={() => setHoverPrev(true)}
               onMouseLeave={() => setHoverPrev(false)}
               aria-label="Anterior"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-none transition-colors duration-300"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-none transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
               style={{
                 backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg,
               }}
@@ -264,7 +264,7 @@ export const CircularTestimonials = ({
               onMouseEnter={() => setHoverNext(true)}
               onMouseLeave={() => setHoverNext(false)}
               aria-label="Siguiente"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-none transition-colors duration-300"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border-none transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
               style={{
                 backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg,
               }}
